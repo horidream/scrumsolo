@@ -1,0 +1,391 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1509EC891EC064620001728C /* AppDelegate.swift */; };
+		1509EC8C1EC064620001728C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1509EC8B1EC064620001728C /* ViewController.swift */; };
+		1509EC8F1EC064620001728C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC8D1EC064620001728C /* Main.storyboard */; };
+		1509EC911EC064620001728C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC901EC064620001728C /* Assets.xcassets */; };
+		1509EC941EC064620001728C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC921EC064620001728C /* LaunchScreen.storyboard */; };
+		2DCDF2CAD7E899E212D62A5F /* Pods_ScrumSolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScrumSolo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1509EC861EC064620001728C /* ScrumSolo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrumSolo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1509EC891EC064620001728C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1509EC8B1EC064620001728C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1509EC8E1EC064620001728C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1509EC901EC064620001728C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1509EC931EC064620001728C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1509EC951EC064620001728C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C9EF2A2E3CC3CA5256C987C /* Pods-ScrumSolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.release.xcconfig"; sourceTree = "<group>"; };
+		D7CE18C27638D8D1E0FDCA36 /* Pods-ScrumSolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1509EC831EC064620001728C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DCDF2CAD7E899E212D62A5F /* Pods_ScrumSolo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0901187E0096692D7800245D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1509EC7D1EC064620001728C = {
+			isa = PBXGroup;
+			children = (
+				1509EC881EC064620001728C /* ScrumSolo */,
+				1509EC871EC064620001728C /* Products */,
+				BD2D5F4B2136142BF5F57368 /* Pods */,
+				0901187E0096692D7800245D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1509EC871EC064620001728C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1509EC861EC064620001728C /* ScrumSolo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1509EC881EC064620001728C /* ScrumSolo */ = {
+			isa = PBXGroup;
+			children = (
+				1509EC891EC064620001728C /* AppDelegate.swift */,
+				1509EC8B1EC064620001728C /* ViewController.swift */,
+				1509EC8D1EC064620001728C /* Main.storyboard */,
+				1509EC901EC064620001728C /* Assets.xcassets */,
+				1509EC921EC064620001728C /* LaunchScreen.storyboard */,
+				1509EC951EC064620001728C /* Info.plist */,
+			);
+			path = ScrumSolo;
+			sourceTree = "<group>";
+		};
+		BD2D5F4B2136142BF5F57368 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7CE18C27638D8D1E0FDCA36 /* Pods-ScrumSolo.debug.xcconfig */,
+				6C9EF2A2E3CC3CA5256C987C /* Pods-ScrumSolo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1509EC851EC064620001728C /* ScrumSolo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1509EC981EC064620001728C /* Build configuration list for PBXNativeTarget "ScrumSolo" */;
+			buildPhases = (
+				0FCF6224DFCD4A062329FFD0 /* [CP] Check Pods Manifest.lock */,
+				1509EC821EC064620001728C /* Sources */,
+				1509EC831EC064620001728C /* Frameworks */,
+				1509EC841EC064620001728C /* Resources */,
+				60EB011CCE62CC1C968534F3 /* [CP] Embed Pods Frameworks */,
+				B285F066E723A55F1B756904 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScrumSolo;
+			productName = ScrumSolo;
+			productReference = 1509EC861EC064620001728C /* ScrumSolo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1509EC7E1EC064620001728C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = DreamStudio;
+				TargetAttributes = {
+					1509EC851EC064620001728C = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 5296P9QS3C;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1509EC811EC064620001728C /* Build configuration list for PBXProject "ScrumSolo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1509EC7D1EC064620001728C;
+			productRefGroup = 1509EC871EC064620001728C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1509EC851EC064620001728C /* ScrumSolo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1509EC841EC064620001728C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1509EC941EC064620001728C /* LaunchScreen.storyboard in Resources */,
+				1509EC911EC064620001728C /* Assets.xcassets in Resources */,
+				1509EC8F1EC064620001728C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FCF6224DFCD4A062329FFD0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		60EB011CCE62CC1C968534F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B285F066E723A55F1B756904 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1509EC821EC064620001728C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1509EC8C1EC064620001728C /* ViewController.swift in Sources */,
+				1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		1509EC8D1EC064620001728C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1509EC8E1EC064620001728C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1509EC921EC064620001728C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1509EC931EC064620001728C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1509EC961EC064620001728C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1509EC971EC064620001728C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1509EC991EC064620001728C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7CE18C27638D8D1E0FDCA36 /* Pods-ScrumSolo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5296P9QS3C;
+				INFOPLIST_FILE = ScrumSolo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.horidream.app.ScrumSolo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1509EC9A1EC064620001728C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C9EF2A2E3CC3CA5256C987C /* Pods-ScrumSolo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5296P9QS3C;
+				INFOPLIST_FILE = ScrumSolo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.horidream.app.ScrumSolo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1509EC811EC064620001728C /* Build configuration list for PBXProject "ScrumSolo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1509EC961EC064620001728C /* Debug */,
+				1509EC971EC064620001728C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1509EC981EC064620001728C /* Build configuration list for PBXNativeTarget "ScrumSolo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1509EC991EC064620001728C /* Debug */,
+				1509EC9A1EC064620001728C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1509EC7E1EC064620001728C /* Project object */;
+}
