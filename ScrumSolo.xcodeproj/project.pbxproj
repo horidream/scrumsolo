@@ -13,6 +13,7 @@
 		1509EC911EC064620001728C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC901EC064620001728C /* Assets.xcassets */; };
 		1509EC941EC064620001728C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC921EC064620001728C /* LaunchScreen.storyboard */; };
 		2DCDF2CAD7E899E212D62A5F /* Pods_ScrumSolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */; };
+		99604DE71EC1363D0029F619 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE61EC1363D0029F619 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		1509EC931EC064620001728C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1509EC951EC064620001728C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C9EF2A2E3CC3CA5256C987C /* Pods-ScrumSolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.release.xcconfig"; sourceTree = "<group>"; };
+		99604DE61EC1363D0029F619 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D7CE18C27638D8D1E0FDCA36 /* Pods-ScrumSolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,14 +71,23 @@
 		1509EC881EC064620001728C /* ScrumSolo */ = {
 			isa = PBXGroup;
 			children = (
-				1509EC891EC064620001728C /* AppDelegate.swift */,
 				1509EC8B1EC064620001728C /* ViewController.swift */,
 				1509EC8D1EC064620001728C /* Main.storyboard */,
 				1509EC901EC064620001728C /* Assets.xcassets */,
+				99604DE51EC131470029F619 /* support */,
+				99604DE61EC1363D0029F619 /* Item.swift */,
+			);
+			path = ScrumSolo;
+			sourceTree = "<group>";
+		};
+		99604DE51EC131470029F619 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				1509EC891EC064620001728C /* AppDelegate.swift */,
 				1509EC921EC064620001728C /* LaunchScreen.storyboard */,
 				1509EC951EC064620001728C /* Info.plist */,
 			);
-			path = ScrumSolo;
+			name = support;
 			sourceTree = "<group>";
 		};
 		BD2D5F4B2136142BF5F57368 /* Pods */ = {
@@ -213,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1509EC8C1EC064620001728C /* ViewController.swift in Sources */,
+				99604DE71EC1363D0029F619 /* Item.swift in Sources */,
 				1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +254,7 @@
 		1509EC961EC064620001728C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -293,6 +306,7 @@
 		1509EC971EC064620001728C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
