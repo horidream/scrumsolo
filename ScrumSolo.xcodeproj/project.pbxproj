@@ -14,6 +14,7 @@
 		1509EC941EC064620001728C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC921EC064620001728C /* LaunchScreen.storyboard */; };
 		2DCDF2CAD7E899E212D62A5F /* Pods_ScrumSolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */; };
 		99604DE71EC1363D0029F619 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE61EC1363D0029F619 /* Item.swift */; };
+		99604DE91EC1FDE10029F619 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE81EC1FDE10029F619 /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		1509EC951EC064620001728C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C9EF2A2E3CC3CA5256C987C /* Pods-ScrumSolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.release.xcconfig"; sourceTree = "<group>"; };
 		99604DE61EC1363D0029F619 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		99604DE81EC1FDE10029F619 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		99604DEA1EC200590029F619 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; };
 		D7CE18C27638D8D1E0FDCA36 /* Pods-ScrumSolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +79,8 @@
 				1509EC901EC064620001728C /* Assets.xcassets */,
 				99604DE51EC131470029F619 /* support */,
 				99604DE61EC1363D0029F619 /* Item.swift */,
+				99604DE81EC1FDE10029F619 /* Database.swift */,
+				99604DEA1EC200590029F619 /* test.playground */,
 			);
 			path = ScrumSolo;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			files = (
 				1509EC8C1EC064620001728C /* ViewController.swift in Sources */,
 				99604DE71EC1363D0029F619 /* Item.swift in Sources */,
+				99604DE91EC1FDE10029F619 /* Database.swift in Sources */,
 				1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
