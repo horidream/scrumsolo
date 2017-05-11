@@ -65,11 +65,13 @@ class Database {
         }
     }
     
-    func query<T>(_ sql:String, args:[Any]! = nil, map black:(FMResultSet)->T)->Array<T>{
+    func query<T>(_ sql:String, args:[Any]! = nil, map black:(FMResultSet)->T?)->Array<T>{
         var result:Array<T> = []
         if let rs = try? db.executeQuery(sql, values: args) {
             while rs.next() {
-                result.append(black(rs))
+                if let r = black(rs){
+                    result.append(r)
+                }
             }
         }
         return result

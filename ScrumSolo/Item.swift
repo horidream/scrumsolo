@@ -9,18 +9,37 @@
 import Foundation
 
 
+
+
+protocol LocalManageable {
+    var db:Database { get }
+    func save()
+    func delete()
+}
+
+extension LocalManageable{
+    var db:Database  {
+        return Const.db
+    }
+}
+
 enum ItemType:String{
     case story, task, undefined
 }
 
-protocol ItemTypeDefined{
-    var type:ItemType {get}
-}
-
-
 class Item{
+    var id:UInt64?
     var title:String
+    var type:ItemType = .undefined
     var parent:Item?
+    var children:[Item] = []
+    
+    static func fetch(_ sql: String, args: [Any]! = nil) -> [Item] {
+        return Const.db.query(sql, args: args) { (rst) -> Item in
+            return Item("ok")
+        }
+    }
+    
     init(_ title:String){
         self.title = title
     }
@@ -28,12 +47,3 @@ class Item{
 
 
 
-class Task:Item,ItemTypeDefined{
-    let type:ItemType = .task
-    
-}
-
-class Story:Item,ItemTypeDefined{
-    let type:ItemType = .story
-    var children:[Item] = []
-}

@@ -15,6 +15,7 @@
 		2DCDF2CAD7E899E212D62A5F /* Pods_ScrumSolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */; };
 		99604DE71EC1363D0029F619 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE61EC1363D0029F619 /* Item.swift */; };
 		99604DE91EC1FDE10029F619 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE81EC1FDE10029F619 /* Database.swift */; };
+		998418A41EC3E599008ADCE8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A31EC3E599008ADCE8 /* Const.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		99604DE61EC1363D0029F619 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		99604DE81EC1FDE10029F619 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		99604DEA1EC200590029F619 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; };
+		998418A31EC3E599008ADCE8 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		D7CE18C27638D8D1E0FDCA36 /* Pods-ScrumSolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				99604DE61EC1363D0029F619 /* Item.swift */,
 				99604DE81EC1FDE10029F619 /* Database.swift */,
 				99604DEA1EC200590029F619 /* test.playground */,
+				998418A31EC3E599008ADCE8 /* Const.swift */,
 			);
 			path = ScrumSolo;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				99604DE71EC1363D0029F619 /* Item.swift in Sources */,
 				99604DE91EC1FDE10029F619 /* Database.swift in Sources */,
 				1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */,
+				998418A41EC3E599008ADCE8 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
