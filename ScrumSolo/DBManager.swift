@@ -11,25 +11,47 @@ import FMDB
 
 
 
-class Database {
+class DBManager {
     
     private var db:FMDatabase
+    var lastInsertRowId:Int64{
+        return db.lastInsertRowId()
+    }
+    
     init(filename:String){
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)
         let path = paths.first!.appending("/\(filename)")
         db = FMDatabase(path: path)
         db.open()
         
+        create()
+    }
+    
+    func create(){
         db.executeStatements("CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, title TEXT, type INTEGER DEFAULT 0)")
     }
     
+    func commit(){
+        db.close()
+        db.open()
+    }
+    
     func exe(_ sql:String, args:[Any]! = nil)->Bool{
-        do {
-            try db.executeQuery(sql, values: args).next()
-            return true
-        }catch _ {
+        if args == nil || args.count == 0{
+            return db.executeStatements(sql)
+        }
+        return db.executeUpdate(sql, withArgumentsIn: args)
+    }
+    
+    func rowExists(id:Int64)->Bool{
+        
+        do{
+            let rs = try db.executeQuery("select id from items where id=?", values: [id])
+            return rs.next()
+        }catch let e{
             return false
         }
+        
     }
     
     func query<T>(_ sql:String, args:[Any]! = nil, map block:(FMResultSet)->T?)->Array<T>{
@@ -45,6 +67,6 @@ class Database {
     }
     
     func clear(){
-        db.executeStatements("DROP TABLE IF EXISTS items")
+        db.executeStatements("delete from items")
     }
 }

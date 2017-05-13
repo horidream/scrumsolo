@@ -9,5 +9,5 @@
 import Foundation
 
 struct Const{
-    static let db:Database = Database(filename: "scrumfolo.db")
+    static let dbm:DBManager = DBManager(filename: "scrumfolo.db")
 }
