@@ -48,7 +48,7 @@ class DBManager {
         do{
             let rs = try db.executeQuery("select id from items where id=?", values: [id])
             return rs.next()
-        }catch let e{
+        }catch{
             return false
         }
         

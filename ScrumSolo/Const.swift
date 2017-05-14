@@ -7,7 +7,12 @@
 //
 
 import Foundation
+import CloudKit
 
 struct Const{
-    static let dbm:DBManager = DBManager(filename: "scrumfolo.db")
+    static var dbm:DBManager = DBManager(filename: "scrumfolo.db")
+    static var cloud:CKDatabase = {
+        let container = CKContainer.default()
+        return container.privateCloudDatabase
+    }()
 }

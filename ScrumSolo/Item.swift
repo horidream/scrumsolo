@@ -8,21 +8,12 @@
 
 import Foundation
 import FMDB
+import CloudKit
 
 
 
-protocol LocalManageable {
-    var dbm:DBManager { get }
-    func save()
-    func delete()
-    init(_ rst:FMResultSet)
-}
 
-extension LocalManageable{
-    var dbm:DBManager  {
-        return Const.dbm
-    }
-}
+
 
 enum ItemType:String{
     case story, task, undefined
