@@ -12,8 +12,8 @@ import CloudKit
 
 
 protocol CloudManageable {
-    var cloudManager:CloudManager { get }
-    func save()
-    func delete()
-    init(_ rst:CKRecord)
+    var cloudStorage:CloudStorage { get }
+    func cloudSave()
+    func cloudDelete()
+    init(_ record:CKRecord)
 }

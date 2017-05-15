@@ -10,14 +10,14 @@ import Foundation
 import FMDB
 
 protocol LocalManageable {
-    var dbm:DBManager { get }
+    var localStorage:LocalStorage { get }
     func save()
     func delete()
     init(_ rst:FMResultSet)
 }
 
 extension LocalManageable{
-    var dbm:DBManager  {
-        return Const.dbm
+    var localStorage:LocalStorage  {
+        return Const.localStorage
     }
 }

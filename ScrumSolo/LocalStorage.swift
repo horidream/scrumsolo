@@ -11,7 +11,7 @@ import FMDB
 
 
 
-class DBManager {
+class LocalStorage {
     
     private var db:FMDatabase
     var lastInsertRowId:Int64{
@@ -31,10 +31,6 @@ class DBManager {
         db.executeStatements("CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, title TEXT, type INTEGER DEFAULT 0)")
     }
     
-    func commit(){
-        db.close()
-        db.open()
-    }
     
     func exe(_ sql:String, args:[Any]! = nil)->Bool{
         if args == nil || args.count == 0{

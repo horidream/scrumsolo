@@ -10,9 +10,7 @@ import Foundation
 import CloudKit
 
 struct Const{
-    static var dbm:DBManager = DBManager(filename: "scrumfolo.db")
-    static var cloud:CKDatabase = {
-        let container = CKContainer.default()
-        return container.privateCloudDatabase
-    }()
+    static var localStorage:LocalStorage = LocalStorage(filename: "scrumfolo.db")
+    static var cloudStorage:CloudStorage = CloudStorage()
+    
 }

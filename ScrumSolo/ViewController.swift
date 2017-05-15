@@ -12,12 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dbm = Const.dbm
-        Const.dbm.clear()
+        Const.localStorage.clear()
         for i in 1...3{
             Item("item \(i)").save()
         }
-        dbm.commit()
         let allItems = Item.fetch("select * from items")
         print("get \(allItems.count) items: \(allItems)")
         let first = allItems.first

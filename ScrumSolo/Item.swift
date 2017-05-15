@@ -27,7 +27,7 @@ class Item: LocalManageable, CustomStringConvertible{
     var children:[Item] = []
     
     static func fetch(_ sql: String, args: [Any]! = nil) -> [Item] {
-        return Const.dbm.query(sql, args: args) { (rst) -> Item in
+        return Const.localStorage.query(sql, args: args) { (rst) -> Item in
             return Item(rst)
         }
     }
@@ -43,16 +43,16 @@ class Item: LocalManageable, CustomStringConvertible{
 
     func delete() {
         if let id = id{
-            _ = dbm.exe("delete from items where id = ?", args: [id])
+            _ = localStorage.exe("delete from items where id = ?", args: [id])
         }
     }
 
     func save() {
-        if let id = id,  dbm.rowExists(id: id){
-            _ = dbm.exe("update items set title=? where id=?", args: [title, id])
+        if let id = id,  localStorage.rowExists(id: id){
+            _ = localStorage.exe("update items set title=? where id=?", args: [title, id])
         }else{
-            if dbm.exe("insert into items (title) values(?)", args: [title]){
-                self.id = dbm.lastInsertRowId
+            if localStorage.exe("insert into items (title) values(?)", args: [title]){
+                self.id = localStorage.lastInsertRowId
             }
         }
     }
