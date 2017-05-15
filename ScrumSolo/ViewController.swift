@@ -24,8 +24,20 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { 
             print("get \(allItems.count) items: \(allItems)")
             
+            for item in allItems{
+                item.cloudSave(){
+                    
+                }
+            }
+            
+            
+            
+            
         }
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            
+        }
     }
 
     

@@ -11,7 +11,7 @@ import CloudKit
 
 class CloudStorage{
     private var container:CKContainer = CKContainer.default()
-    private var privateDB:CKDatabase{
+    public var privateDB:CKDatabase{
         return container.privateCloudDatabase
     }
     

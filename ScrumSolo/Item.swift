@@ -19,8 +19,11 @@ enum ItemType:String{
     case story, task, undefined
 }
 
-class Item: LocalManageable, CustomStringConvertible{
+class Item: LocalManageable, CloudManageable, CustomStringConvertible{
     var id:Int64?
+    var record:CKRecord?
+    
+    
     var title:String
     var type:ItemType = .undefined
     var parent:Item?
@@ -32,6 +35,8 @@ class Item: LocalManageable, CustomStringConvertible{
         }
     }
     
+    
+    
     init(_ title:String){
         self.title = title
     }
@@ -41,6 +46,12 @@ class Item: LocalManageable, CustomStringConvertible{
         self.title = rst.string(forColumn: "title")
     }
 
+    required init(_ record:CKRecord){
+        self.record = record
+        self.title = record["title"] as! String
+    }
+    
+    
     func delete() {
         if let id = id{
             _ = localStorage.exe("delete from items where id = ?", args: [id])
@@ -56,11 +67,43 @@ class Item: LocalManageable, CustomStringConvertible{
             }
         }
     }
+    
+    
+    func getOrCreateRecord()->CKRecord{
+        if let record = self.record{
+            return record
+        }
+        let record = CKRecord(recordType: "items")
+        record["title"] = title as CKRecordValue
+        return record
+    }
+    
+    func cloudSave(complete:@escaping ()->Void){
+        cloudStorage.modify(recordsToSave: [self.getOrCreateRecord()]) { (records, ids, error) in
+            if error != nil{
+                self.record = records?.first
+                complete()
+            }
+        }
+    }
+    
+    func cloudDelete(complete:@escaping ()->Void){
+        if let id = self.record?.recordID{
+            cloudStorage.modify(recordsToSave:nil, recordIDsToDelete: [id] ) { (records, ids, error) in
+                if error != nil{
+                    self.record = nil
+                    complete()
+                }
+            }
+        }
+    }
+
    
     var description: String{
         return "\(String(describing: id ?? 0))-\(self.title)"
     }
 }
+
 
 
 

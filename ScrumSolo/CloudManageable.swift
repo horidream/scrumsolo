@@ -13,7 +13,13 @@ import CloudKit
 
 protocol CloudManageable {
     var cloudStorage:CloudStorage { get }
-    func cloudSave()
-    func cloudDelete()
+    func cloudSave(complete:()->Void)
+    func cloudDelete(complete:()->Void)
     init(_ record:CKRecord)
+}
+
+extension CloudManageable{
+    var cloudStorage:CloudStorage{
+        return Const.cloudStorage
+    }
 }
