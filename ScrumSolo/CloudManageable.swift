@@ -13,8 +13,8 @@ import CloudKit
 
 protocol CloudManageable {
     var cloudStorage:CloudStorage { get }
-    func cloudSave(complete:()->Void)
-    func cloudDelete(complete:()->Void)
+    func cloudSave(complete:@escaping()->Void)
+    func cloudDelete(complete:@escaping()->Void)
     init(_ record:CKRecord)
 }
 

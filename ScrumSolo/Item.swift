@@ -20,6 +20,7 @@ enum ItemType:String{
 }
 
 class Item: LocalManageable, CloudManageable, CustomStringConvertible{
+
     var id:Int64?
     var record:CKRecord?
     
