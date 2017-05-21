@@ -12,44 +12,28 @@ import CloudKit
 
 
 
-
-
-
-enum ItemType:String{
-    case story, task, undefined
-}
-
 class Item: LocalManageable, CloudManageable, CustomStringConvertible{
 
     var id:Int64?
     var record:CKRecord?
+    var tableName:String { return "items" }
     
-    
-    var title:String
-    var type:ItemType = .undefined
-    var parent:Item?
-    var children:[Item] = []
-    
-    static func fetch(_ sql: String, args: [Any]! = nil) -> [Item] {
-        return Const.localStorage.query(sql, args: args) { (rst) -> Item in
-            return Item(rst)
+    static func fetch<T:Item>(_ sql: String, args: [Any]! = nil) -> [T] {
+        return Const.localStorage.query(sql, args: args) { (rst) -> T in
+            return T(rst)
         }
     }
     
-    
-    
-    init(_ title:String){
-        self.title = title
+    init(){
+        
     }
     
     required init(_ rst: FMResultSet) {
         self.id = rst.longLongInt(forColumn: "id")
-        self.title = rst.string(forColumn: "title")
     }
 
     required init(_ record:CKRecord){
         self.record = record
-        self.title = record["title"] as! String
     }
     
     
@@ -61,22 +45,34 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
 
     func save() {
         if let id = id,  localStorage.rowExists(id: id){
-            _ = localStorage.exe("update items set title=? where id=?", args: [title, id])
+            update()
+//            _ = localStorage.exe("update items set title=? where id=?", args: [title, id])
         }else{
-            if localStorage.exe("insert into items (title) values(?)", args: [title]){
-                self.id = localStorage.lastInsertRowId
-            }
+            self.id = create()
+//            if localStorage.exe("insert into items (title) values(?)", args: [title]){
+//                self.id = localStorage.lastInsertRowId
+//            }
         }
     }
     
+    private func create()->Int64?{
+        return nil
+    }
     
-    func getOrCreateRecord()->CKRecord{
+    private func update(){
+        
+    }
+    
+    private func assembleRecord( _ record: CKRecord)->CKRecord{
+        return record
+    }
+    
+    private func getOrCreateRecord()->CKRecord{
         if let record = self.record{
             return record
         }
         let record = CKRecord(recordType: "items")
-        record["title"] = title as CKRecordValue
-        return record
+        return assembleRecord(record)
     }
     
     func cloudSave(complete:@escaping ()->Void){
@@ -101,10 +97,73 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
 
    
     var description: String{
-        return "\(String(describing: id ?? 0))-\(self.title)"
+        return "Item - \(id ?? 0)"
     }
 }
 
 
 
 
+protocol Composite{
+    associatedtype T
+    var children:[T] { get set }
+    var parent:T? { get }
+    
+    func addChild(_ child:T)
+    func insertChild(_ child:T, at index:Int)
+    func removeChild(at index:Int)
+    func removeAllChild()
+    func removeFromParent()
+}
+
+extension Composite{
+    mutating func addChild(_ child:T){
+        children.append(child)
+    }
+
+    mutating func insertChild(_ child:T, at index:Int)
+    {
+        children.insert(child, at: index)
+    }
+    
+    mutating func removeChild(at index:Int){
+        if( index < children.count && index >= 0){
+            children.remove(at: index)
+        }
+    }
+    
+    mutating func removeAllChild(){
+        children = []
+    }
+}
+
+extension Composite where T:Equatable,T:Composite{
+    func removeChild(_ child:T){
+        if let index = children.index(where: { $0 == child}){
+            removeChild(at: index)
+        }
+    }
+    
+    func removeFromParent(){
+    }
+
+}
+
+
+//class ScrumItem:Item{
+//    var title:String
+//    init(title:String){
+//        self.title = title
+//        super.init()
+//    }
+//    
+//    required init(_ record: CKRecord) {
+//        self.title = record["title"] as? String ?? ""
+//        super.init(record)
+//    }
+//    
+//    required init(_ rst: FMResultSet) {
+//        self.title = rst.string(forColumn: "title")
+//        super.init(rst)
+//    }
+//}
