@@ -8,7 +8,7 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - ReactiveKit (3.5.1)
-  - Shifu (0.1.0)
+  - Shifu (0.1.1)
 
 DEPENDENCIES:
   - Bond
@@ -18,7 +18,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Shifu:
-    :path: ../shifu
+    :path: "../shifu"
 
 SPEC CHECKSUMS:
   Bond: c54dc8e6ad4f2d4e3d60c680c25637a7824161df
@@ -26,7 +26,7 @@ SPEC CHECKSUMS:
   EZSwiftExtensions: ce22bf6fc5c6e7c883fec413300b006e123735d0
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   ReactiveKit: aa0faf668053e7fddd6a07829ba3696741cbff37
-  Shifu: 79c5067b796657711ca253e9a91ea4727a797ef4
+  Shifu: ffdde1dee3fa84b14be026afb48a5df119d876e9
 
 PODFILE CHECKSUM: 7c1986e57e611f7a0cad177d343803268cb52c2f
 
