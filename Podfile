@@ -10,6 +10,8 @@ target 'ScrumSolo' do
 	pod 'EZSwiftExtensions'
     pod 'FMDB'
     pod 'Bond'
-
+    pod 'Alamofire'
+    pod 'SwiftyJSON'
+    
     pod 'Shifu', :path => "../shifu"
 end
