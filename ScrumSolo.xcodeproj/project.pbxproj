@@ -20,6 +20,7 @@
 		998418A61EC852C4008ADCE8 /* CloudStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A51EC852C4008ADCE8 /* CloudStorage.swift */; };
 		998418A81EC8C227008ADCE8 /* LocalManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A71EC8C227008ADCE8 /* LocalManageable.swift */; };
 		998418AA1EC8C250008ADCE8 /* CloudManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A91EC8C250008ADCE8 /* CloudManageable.swift */; };
+		99CEA1AA1ED987320003B33A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CEA1A91ED987320003B33A /* Story.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		998418A51EC852C4008ADCE8 /* CloudStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudStorage.swift; sourceTree = "<group>"; };
 		998418A71EC8C227008ADCE8 /* LocalManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalManageable.swift; sourceTree = "<group>"; };
 		998418A91EC8C250008ADCE8 /* CloudManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudManageable.swift; sourceTree = "<group>"; };
+		99CEA1A91ED987320003B33A /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		D7CE18C27638D8D1E0FDCA36 /* Pods-ScrumSolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				1509EC901EC064620001728C /* Assets.xcassets */,
 				99604DE51EC131470029F619 /* support */,
 				99604DE61EC1363D0029F619 /* Item.swift */,
+				99CEA1A91ED987320003B33A /* Story.swift */,
 				998418A71EC8C227008ADCE8 /* LocalManageable.swift */,
 				998418A91EC8C250008ADCE8 /* CloudManageable.swift */,
 				99604DE81EC1FDE10029F619 /* LocalStorage.swift */,
@@ -262,6 +265,7 @@
 				998418A61EC852C4008ADCE8 /* CloudStorage.swift in Sources */,
 				1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */,
 				998418A41EC3E599008ADCE8 /* Const.swift in Sources */,
+				99CEA1AA1ED987320003B33A /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

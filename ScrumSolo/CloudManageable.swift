@@ -9,12 +9,15 @@
 import Foundation
 import CloudKit
 
-
+struct AsyncResponse{
+    let success:Bool
+    let payload:Any!
+}
 
 protocol CloudManageable {
     var cloudStorage:CloudStorage { get }
-    func cloudSave(complete:@escaping()->Void)
-    func cloudDelete(complete:@escaping()->Void)
+    func cloudSave(complete:@escaping(AsyncResponse)->Void)
+    func cloudDelete(complete:@escaping(AsyncResponse)->Void)
     init(_ record:CKRecord)
 }
 

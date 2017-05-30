@@ -56,15 +56,15 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
     }
     
     private func create()->Int64?{
-        return nil
+        preconditionFailure("This method must be overridden")
     }
     
     private func update(){
-        
+        preconditionFailure("This method must be overridden")
     }
     
-    private func assembleRecord( _ record: CKRecord)->CKRecord{
-        return record
+    private func setRecordProperties( _ record: CKRecord)->CKRecord{
+        preconditionFailure("This method must be overridden")
     }
     
     private func getOrCreateRecord()->CKRecord{
@@ -72,29 +72,32 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
             return record
         }
         let record = CKRecord(recordType: "items")
-        return assembleRecord(record)
+        return setRecordProperties(record)
     }
     
-    func cloudSave(complete:@escaping ()->Void){
+    func cloudSave(complete:@escaping (AsyncResponse)->Void){
         cloudStorage.modify(recordsToSave: [self.getOrCreateRecord()]) { (records, ids, error) in
             if error != nil{
                 self.record = records?.first
-                complete()
+                complete(AsyncResponse(success: true, payload: self.record))
+            }else{
+                complete(AsyncResponse(success: false, payload: error))
             }
         }
     }
     
-    func cloudDelete(complete:@escaping ()->Void){
+    func cloudDelete(complete:@escaping (AsyncResponse)->Void){
         if let id = self.record?.recordID{
             cloudStorage.modify(recordsToSave:nil, recordIDsToDelete: [id] ) { (records, ids, error) in
                 if error != nil{
                     self.record = nil
-                    complete()
+                    complete(AsyncResponse(success: true, payload: nil))
+                }else{
+                    complete(AsyncResponse(success: false, payload: error))
                 }
             }
         }
     }
-    
     
     var description: String{
         return "Item - \(id ?? 0)"
