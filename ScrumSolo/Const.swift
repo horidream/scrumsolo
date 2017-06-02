@@ -9,8 +9,3 @@
 import Foundation
 import CloudKit
 
-struct Const{
-    static var localStorage:LocalStorage = LocalStorage(filename: "scrumfolo.db")
-    static var cloudStorage:CloudStorage = CloudStorage()
-    
-}

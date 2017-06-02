@@ -28,9 +28,14 @@ class LocalStorage {
     }
     
     func create(){
-        db.executeStatements("CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, title TEXT, type INTEGER DEFAULT 0)")
+//        db.executeStatements("CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, title TEXT, type INTEGER DEFAULT 0)")
+        create(tableName: "items", schema: "id INTEGER PRIMARY KEY, title TEXT, type INTEGER DEFAULT 0")
     }
     
+    func create(tableName table:String, schema:String)
+    {
+        db.executeStatements("CREATE TABLE IF NOT EXISTS \(table) (\(schema))")
+    }
     
     func exe(_ sql:String, args:[Any]! = nil)->Bool{
         if args == nil || args.count == 0{
@@ -62,7 +67,7 @@ class LocalStorage {
         return result
     }
     
-    func clear(){
-        db.executeStatements("delete from items")
+    func clear(tableName table:String){
+        db.executeStatements("delete from \(table)")
     }
 }

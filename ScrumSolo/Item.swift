@@ -13,13 +13,22 @@ import CloudKit
 
 
 class Item: LocalManageable, CloudManageable, CustomStringConvertible{
+
     
     var id:Int64?
     var record:CKRecord?
-    var tableName:String { return "items" }
+    
+    static var cloudStorage: CloudStorage{
+        return CloudStorage()
+    }
+    static var localStorage: LocalStorage{
+        let ls = LocalStorage(filename: "scrumfolo.db")
+        ls.create(tableName: "items", schema: "id INTEGER PRIMARY KEY, title TEXT, type INTEGER DEFAULT 0")
+        return ls
+    }
     
     static func fetch<T:Item>(_ sql: String, args: [Any]! = nil) -> [T] {
-        return Const.localStorage.query(sql, args: args) { (rst) -> T in
+        return Item.localStorage.query(sql, args: args) { (rst) -> T in
             return T(rst)
         }
     }

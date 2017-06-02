@@ -10,7 +10,7 @@ import Foundation
 import FMDB
 
 protocol LocalManageable {
-    var localStorage:LocalStorage { get }
+    static var localStorage:LocalStorage { get }
     func save()
     func delete()
     init(_ rst:FMResultSet)
@@ -18,6 +18,6 @@ protocol LocalManageable {
 
 extension LocalManageable{
     var localStorage:LocalStorage  {
-        return Const.localStorage
+        return Self.localStorage
     }
 }
