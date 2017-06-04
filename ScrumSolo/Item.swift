@@ -18,14 +18,8 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
     var id:Int64?
     var record:CKRecord?
     
-    static var cloudStorage: CloudStorage{
-        return CloudStorage()
-    }
-    static var localStorage: LocalStorage{
-        let ls = LocalStorage(filename: "scrumfolo.db")
-        ls.create(tableName: "items", schema: "id INTEGER PRIMARY KEY, title TEXT, type INTEGER DEFAULT 0")
-        return ls
-    }
+    static let cloudStorage: CloudStorage = Shared.cloudStorage
+    static let localStorage: LocalStorage = Shared.localStorage
     
     static func fetch<T:Item>(_ sql: String, args: [Any]! = nil) -> [T] {
         return Item.localStorage.query(sql, args: args) { (rst) -> T in
@@ -46,13 +40,13 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
     }
     
     
-    func delete() {
+    final func delete() {
         if let id = id{
             _ = localStorage.exe("delete from items where id = ?", args: [id])
         }
     }
     
-    func save() {
+    final func save() {
         if let id = id,  localStorage.rowExists(id: id){
             update()
             //            _ = localStorage.exe("update items set title=? where id=?", args: [title, id])
@@ -64,15 +58,15 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
         }
     }
     
-    private func create()->Int64?{
+    func create()->Int64?{
         preconditionFailure("This method must be overridden")
     }
     
-    private func update(){
+    func update(){
         preconditionFailure("This method must be overridden")
     }
     
-    private func setRecordProperties( _ record: CKRecord)->CKRecord{
+    func setRecordProperties( _ record: CKRecord)->CKRecord{
         preconditionFailure("This method must be overridden")
     }
     
@@ -84,7 +78,7 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
         return setRecordProperties(record)
     }
     
-    func cloudSave(complete:@escaping (AsyncResponse)->Void){
+    final func cloudSave(complete:@escaping (AsyncResponse)->Void){
         cloudStorage.modify(recordsToSave: [self.getOrCreateRecord()]) { (records, ids, error) in
             if error != nil{
                 self.record = records?.first
@@ -95,7 +89,7 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
         }
     }
     
-    func cloudDelete(complete:@escaping (AsyncResponse)->Void){
+    final func cloudDelete(complete:@escaping (AsyncResponse)->Void){
         if let id = self.record?.recordID{
             cloudStorage.modify(recordsToSave:nil, recordIDsToDelete: [id] ) { (records, ids, error) in
                 if error != nil{
@@ -109,7 +103,7 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
     }
     
     var description: String{
-        return "Item - \(id ?? 0)"
+        return "\(String(describing:type(of:self))) - \(id ?? 0)"
     }
 }
 

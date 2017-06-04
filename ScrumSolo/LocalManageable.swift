@@ -11,6 +11,7 @@ import FMDB
 
 protocol LocalManageable {
     static var localStorage:LocalStorage { get }
+    
     func save()
     func delete()
     init(_ rst:FMResultSet)
@@ -20,4 +21,9 @@ extension LocalManageable{
     var localStorage:LocalStorage  {
         return Self.localStorage
     }
+    
+    var tableName:String {
+        return String(describing: Self.self)
+    }
+    
 }

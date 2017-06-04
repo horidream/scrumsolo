@@ -25,4 +25,8 @@ extension CloudManageable{
     var cloudStorage:CloudStorage{
         return Self.cloudStorage
     }
+    
+    var recordName:String {
+        return String(describing: Self.self)
+    }
 }
