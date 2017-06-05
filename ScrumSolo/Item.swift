@@ -11,8 +11,18 @@ import FMDB
 import CloudKit
 
 
+enum ItemState:Int{
+    case todo = 0, inprogress, done
+}
 
-class Item: LocalManageable, CloudManageable, CustomStringConvertible{
+class Item{
+    var title:String!
+    var descriptions:String!
+    var state:ItemState = .todo
+}
+
+class ManageableItem: Item, LocalManageable, CloudManageable{
+
 
     
     var id:Int64?
@@ -21,21 +31,27 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
     static let cloudStorage: CloudStorage = Shared.cloudStorage
     static let localStorage: LocalStorage = Shared.localStorage
     
-    static func fetch<T:Item>(_ sql: String, args: [Any]! = nil) -> [T] {
-        return Item.localStorage.query(sql, args: args) { (rst) -> T in
-            return T(rst)
-        }
-    }
     
-    init(){
-        
+    override init(){
+        super.init()
+        self.title = "Untitled"
+        self.descriptions = ""
     }
     
     required init(_ rst: FMResultSet) {
+        
+        super.init()
+        self.title = rst.string(forColumn: "title")
+        self.descriptions = rst.string(forColumn:"descriptions")
         self.id = rst.longLongInt(forColumn: "id")
+        self.state = ItemState(rawValue: rst.long(forColumn: "state")) ?? .todo
     }
     
     required init(_ record:CKRecord){
+        super.init()
+        self.title = record["title"] as! String
+        self.descriptions = record["descriptions"] as! String
+        self.state = ItemState(rawValue: record["state"] as! Int) ?? .todo
         self.record = record
     }
     
@@ -49,12 +65,9 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
     final func save() {
         if let id = id,  localStorage.rowExists(id: id){
             update()
-            //            _ = localStorage.exe("update items set title=? where id=?", args: [title, id])
+            
         }else{
             self.id = create()
-            //            if localStorage.exe("insert into items (title) values(?)", args: [title]){
-            //                self.id = localStorage.lastInsertRowId
-            //            }
         }
     }
     
@@ -101,9 +114,24 @@ class Item: LocalManageable, CloudManageable, CustomStringConvertible{
             }
         }
     }
+}
+
+
+extension ManageableItem: CustomStringConvertible{
+    static func fetch(_ sql:String, args:[Any]! = [])->[ManageableItem]{
+        return Shared.localStorage.query(sql, args: args) { (rst) -> ManageableItem? in
+            return self.init(rst)
+        }
+    }
     
-    var description: String{
-        return "\(String(describing:type(of:self))) - \(id ?? 0)"
+    convenience init(title:String, descriptions:String = ""){
+        self.init()
+        self.title = title
+        self.descriptions = descriptions
+    }
+    
+    var description:String{
+        return "\(type(of:self))-\(self.title!)(\(self.state))"
     }
 }
 

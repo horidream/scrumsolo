@@ -9,45 +9,38 @@
 import Foundation
 import Shifu
 
-class Node<T> {
-    var value:T
-    weak var parent:Node?
-    var children:[Node]?
-    init(_ value:T){
-        self.value = value
-    }
-}
 
-extension Node{
-    func addChild(_ child:Node)->Node{
-        children?.append(child)
-        return child
-    }
-}
 
-extension Node where T:Equatable{
-    func removeChild(_ child:Node) -> Node?{
-        if let index = children?.index(where: { (someNode) -> Bool in
-            return someNode.value == child.value
+class Story:ManageableItem{
+    var priority:UInt64 = 0
+    var children:[Task] = []
+    
+    
+    
+    func addChild(_ child:Task){
+        if(!children.contains(child)){
+            children.append(child)
+        }
+    }
+    
+    func removeChild(_ child:Task){
+        if let index = children.index(where: { (task) -> Bool in
+            return child == task
         }){
-            return children?.remove(at: index)
+            children.remove(at: index)
+        }
+    }
+    
+    override func create() -> Int64? {
+        if localStorage.exe("insert into Story (title, descriptions, state, priority) values(?, ?, ?, ?)", args: [title, descriptions, state.rawValue, priority]){
+            self.id = localStorage.lastInsertRowId
         }
         return nil
     }
+    
+    override func update() {
+        _ = localStorage.exe("update items set (title, descriptions, state, priority) = (?, ?, ?, ?) where id=?", args: [title, descriptions, state.rawValue, priority,  id!])
+    }
 }
 
-enum ItemType{
-    case story
-}
-typealias Story = Node<String>
 
-
-//class Task:Item, Composite{
-//    var parent:Story?
-//    var children: [NSNull]? = nil
-//}
-//
-//class Story:Item, Composite{
-//    var parent: NSNull? = nil
-//    var children: [Task]? = []
-//}

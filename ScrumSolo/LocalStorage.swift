@@ -23,14 +23,8 @@ class LocalStorage {
         let path = paths.first!.appending("/\(filename)")
         db = FMDatabase(path: path)
         db.open()
-        
-        create()
     }
     
-    func create(){
-//        db.executeStatements("CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY, title TEXT, type INTEGER DEFAULT 0)")
-        create(tableName: "items", schema: "id INTEGER PRIMARY KEY, title TEXT, type INTEGER DEFAULT 0")
-    }
     
     func create(tableName table:String, schema:String)
     {

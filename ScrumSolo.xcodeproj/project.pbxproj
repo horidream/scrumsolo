@@ -16,6 +16,7 @@
 		2DCDF2CAD7E899E212D62A5F /* Pods_ScrumSolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */; };
 		99604DE71EC1363D0029F619 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE61EC1363D0029F619 /* Item.swift */; };
 		99604DE91EC1FDE10029F619 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE81EC1FDE10029F619 /* LocalStorage.swift */; };
+		996668C91EE5B252008E8C93 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996668C81EE5B252008E8C93 /* Task.swift */; };
 		998418A41EC3E599008ADCE8 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A31EC3E599008ADCE8 /* Shared.swift */; };
 		998418A61EC852C4008ADCE8 /* CloudStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A51EC852C4008ADCE8 /* CloudStorage.swift */; };
 		998418A81EC8C227008ADCE8 /* LocalManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A71EC8C227008ADCE8 /* LocalManageable.swift */; };
@@ -38,6 +39,7 @@
 		99604DE61EC1363D0029F619 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		99604DE81EC1FDE10029F619 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		99604DEA1EC200590029F619 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; };
+		996668C81EE5B252008E8C93 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		998418A31EC3E599008ADCE8 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		998418A51EC852C4008ADCE8 /* CloudStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudStorage.swift; sourceTree = "<group>"; };
 		998418A71EC8C227008ADCE8 /* LocalManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalManageable.swift; sourceTree = "<group>"; };
@@ -91,15 +93,9 @@
 			children = (
 				1509EC8B1EC064620001728C /* ViewController.swift */,
 				1509EC8D1EC064620001728C /* Main.storyboard */,
-				1509EC901EC064620001728C /* Assets.xcassets */,
+				996668CB1EE5B27D008E8C93 /* manageable */,
+				996668CA1EE5B26F008E8C93 /* model */,
 				99604DE51EC131470029F619 /* support */,
-				99604DE61EC1363D0029F619 /* Item.swift */,
-				99CEA1A91ED987320003B33A /* Story.swift */,
-				998418A71EC8C227008ADCE8 /* LocalManageable.swift */,
-				998418A91EC8C250008ADCE8 /* CloudManageable.swift */,
-				99604DE81EC1FDE10029F619 /* LocalStorage.swift */,
-				998418A51EC852C4008ADCE8 /* CloudStorage.swift */,
-				998418A31EC3E599008ADCE8 /* Shared.swift */,
 			);
 			path = ScrumSolo;
 			sourceTree = "<group>";
@@ -107,6 +103,7 @@
 		99604DE51EC131470029F619 /* support */ = {
 			isa = PBXGroup;
 			children = (
+				1509EC901EC064620001728C /* Assets.xcassets */,
 				15A3535D1EC98D2200857EF6 /* ScrumSolo.entitlements */,
 				99604DEA1EC200590029F619 /* test.playground */,
 				1509EC891EC064620001728C /* AppDelegate.swift */,
@@ -114,6 +111,28 @@
 				1509EC951EC064620001728C /* Info.plist */,
 			);
 			name = support;
+			sourceTree = "<group>";
+		};
+		996668CA1EE5B26F008E8C93 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				99604DE61EC1363D0029F619 /* Item.swift */,
+				99CEA1A91ED987320003B33A /* Story.swift */,
+				996668C81EE5B252008E8C93 /* Task.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		996668CB1EE5B27D008E8C93 /* manageable */ = {
+			isa = PBXGroup;
+			children = (
+				998418A71EC8C227008ADCE8 /* LocalManageable.swift */,
+				998418A91EC8C250008ADCE8 /* CloudManageable.swift */,
+				99604DE81EC1FDE10029F619 /* LocalStorage.swift */,
+				998418A51EC852C4008ADCE8 /* CloudStorage.swift */,
+				998418A31EC3E599008ADCE8 /* Shared.swift */,
+			);
+			name = manageable;
 			sourceTree = "<group>";
 		};
 		BD2D5F4B2136142BF5F57368 /* Pods */ = {
@@ -259,6 +278,7 @@
 			files = (
 				1509EC8C1EC064620001728C /* ViewController.swift in Sources */,
 				99604DE71EC1363D0029F619 /* Item.swift in Sources */,
+				996668C91EE5B252008E8C93 /* Task.swift in Sources */,
 				998418A81EC8C227008ADCE8 /* LocalManageable.swift in Sources */,
 				99604DE91EC1FDE10029F619 /* LocalStorage.swift in Sources */,
 				998418AA1EC8C250008ADCE8 /* CloudManageable.swift in Sources */,
