@@ -83,7 +83,7 @@ class ManageableItem: Item, LocalManageable, CloudManageable{
         preconditionFailure("This method must be overridden")
     }
     
-    private func getOrCreateRecord()->CKRecord{
+    fileprivate func getOrCreateRecord()->CKRecord{
         if let record = self.record{
             return record
         }
@@ -93,7 +93,7 @@ class ManageableItem: Item, LocalManageable, CloudManageable{
     
     final func cloudSave(complete:@escaping (AsyncResponse)->Void){
         cloudStorage.modify(recordsToSave: [self.getOrCreateRecord()]) { (records, ids, error) in
-            if error != nil{
+            if error == nil{
                 self.record = records?.first
                 complete(AsyncResponse(success: true, payload: self.record))
             }else{
@@ -105,7 +105,7 @@ class ManageableItem: Item, LocalManageable, CloudManageable{
     final func cloudDelete(complete:@escaping (AsyncResponse)->Void){
         if let id = self.record?.recordID{
             cloudStorage.modify(recordsToSave:nil, recordIDsToDelete: [id] ) { (records, ids, error) in
-                if error != nil{
+                if error == nil{
                     self.record = nil
                     complete(AsyncResponse(success: true, payload: nil))
                 }else{
@@ -135,5 +135,30 @@ extension ManageableItem: CustomStringConvertible{
     }
 }
 
+
+extension Array where Element:ManageableItem{
+    func cloudSave(complete:@escaping (AsyncResponse)->Void){
+        Shared.cloudStorage.modify(recordsToSave: self.flatMap{ $0.getOrCreateRecord() }) { (records, ids, error) in
+            if error == nil{
+                zip(self, records!).forEach{ $0.record = $1 }
+                complete(AsyncResponse(success: true, payload: records))
+            }else{
+                complete(AsyncResponse(success: false, payload: error))
+            }
+        }
+    }
+    
+    func cloudDelete(complete:@escaping (AsyncResponse)->Void){
+        Shared.cloudStorage.modify(recordsToSave:nil, recordIDsToDelete: self.flatMap{ $0.record?.recordID } ) { (records, ids, error) in
+                if error == nil{
+                    self.forEach{ $0.record = nil }
+                    complete(AsyncResponse(success: true, payload: nil))
+                }else{
+                    complete(AsyncResponse(success: false, payload: error))
+                }
+            }
+    }
+
+}
 
 

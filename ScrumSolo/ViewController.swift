@@ -14,12 +14,13 @@ import SwiftyJSON
 
 
 class ViewController: UIViewController {
-    var requestManager:SessionManager!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        
-        let item = Item()
-        print(item.tableName)
-        
+        let s = Story(title:"OK", descriptions:"...")
+        let s2 = Story(title:"hello", descriptions:"world")
+        [s, s2].cloudSave { (res) in
+            print(res)
+        }
     }
 }

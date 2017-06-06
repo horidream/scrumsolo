@@ -8,7 +8,7 @@
 
 import Foundation
 import Shifu
-
+import CloudKit
 
 
 class Story:ManageableItem{
@@ -39,7 +39,15 @@ class Story:ManageableItem{
     }
     
     override func update() {
-        _ = localStorage.exe("update items set (title, descriptions, state, priority) = (?, ?, ?, ?) where id=?", args: [title, descriptions, state.rawValue, priority,  id!])
+        _ = localStorage.exe("update Story set (title, descriptions, state, priority) = (?, ?, ?, ?) where id=?", args: [title, descriptions, state.rawValue, priority,  id!])
+    }
+    
+    override func setRecordProperties(_ record: CKRecord) -> CKRecord {
+        record["title"] = self.title! as CKRecordValue
+        record["descriptions"] = self.descriptions! as CKRecordValue
+        record["state"] = self.state.rawValue as CKRecordValue
+        record["priority"] = self.priority as CKRecordValue
+        return record
     }
 }
 
