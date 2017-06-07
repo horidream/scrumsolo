@@ -140,7 +140,7 @@ extension Array where Element:ManageableItem{
     func cloudSave(complete:@escaping (AsyncResponse)->Void){
         Shared.cloudStorage.modify(recordsToSave: self.flatMap{ $0.getOrCreateRecord() }) { (records, ids, error) in
             if error == nil{
-                zip(self, records!).forEach{ $0.record = $1 }
+                zip(self, records!).forEach{ $0.0.record = $0.1 }
                 complete(AsyncResponse(success: true, payload: records))
             }else{
                 complete(AsyncResponse(success: false, payload: error))

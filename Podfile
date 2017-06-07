@@ -7,11 +7,8 @@ target 'ScrumSolo' do
   use_frameworks!
 
   # Pods for ScrumSolo
-	pod 'EZSwiftExtensions'
     pod 'FMDB'
-    pod 'Bond'
     pod 'Alamofire'
-    pod 'SwiftyJSON'
     
     pod 'Shifu', :path => "../shifu"
 end
