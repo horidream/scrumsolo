@@ -8,7 +8,6 @@
 
 import UIKit
 import CloudKit
-import Alamofire
 
 
 
@@ -16,10 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let s = Story(title:"OK", descriptions:"...")
-        let s2 = Story(title:"hello", descriptions:"world")
-        [s, s2].cloudSave { (res) in
-            print(res)
+        let query = CKQuery(recordType: "Story", predicate: NSPredicate(value: true))
+        Story.cloudQuery(query){ (stories) in
+            stories.forEach({ (story) in
+                print(story.priority)
+            })
         }
     }
 }

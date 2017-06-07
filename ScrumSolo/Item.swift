@@ -23,8 +23,6 @@ class Item{
 
 class ManageableItem: Item, LocalManageable, CloudManageable{
 
-
-    
     var id:Int64?
     var record:CKRecord?
     
@@ -87,7 +85,7 @@ class ManageableItem: Item, LocalManageable, CloudManageable{
         if let record = self.record{
             return record
         }
-        let record = CKRecord(recordType: "items")
+        let record = CKRecord(recordType: recordName )
         return setRecordProperties(record)
     }
     
@@ -116,13 +114,7 @@ class ManageableItem: Item, LocalManageable, CloudManageable{
     }
 }
 
-
 extension ManageableItem: CustomStringConvertible{
-    static func fetch(_ sql:String, args:[Any]! = [])->[ManageableItem]{
-        return Shared.localStorage.query(sql, args: args) { (rst) -> ManageableItem? in
-            return self.init(rst)
-        }
-    }
     
     convenience init(title:String, descriptions:String = ""){
         self.init()
@@ -131,7 +123,7 @@ extension ManageableItem: CustomStringConvertible{
     }
     
     var description:String{
-        return "\(type(of:self))-\(self.title!)(\(self.state))"
+        return "\(type(of:self))-\(self.title!)"
     }
 }
 

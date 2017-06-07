@@ -9,13 +9,20 @@
 import Foundation
 import Shifu
 import CloudKit
-
+import FMDB
 
 class Story:ManageableItem{
     var priority:UInt64 = 0
     var children:[Task] = []
     
+    required init(_ record: CKRecord) {
+        super.init(record)
+        self.priority = record["priority"] as! UInt64
+    }
     
+    required init(_ rst: FMResultSet) {
+        super.init(rst)
+    }
     
     func addChild(_ child:Task){
         if(!children.contains(child)){

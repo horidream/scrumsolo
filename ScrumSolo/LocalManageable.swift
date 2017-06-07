@@ -18,12 +18,18 @@ protocol LocalManageable {
 }
 
 extension LocalManageable{
+    static func query(_ sql:String, args:[Any]! = [])->[Self]{
+        return localStorage.query(sql, args: args) { (rst) -> Self? in
+            return self.init(rst)
+        }
+    }
+    
     var localStorage:LocalStorage  {
         return Self.localStorage
     }
     
     var tableName:String {
-        return String(describing: Self.self)
+        return String(describing: type(of: self))
     }
     
 }

@@ -22,11 +22,19 @@ protocol CloudManageable {
 }
 
 extension CloudManageable{
+    static func cloudQuery(_ query:CKQuery, callback: @escaping ([Self])->Void){
+        return cloudStorage.query(query) { records in
+            callback(records.map({ record in
+                self.init(record)
+            }))
+        }
+    }
+    
     var cloudStorage:CloudStorage{
         return Self.cloudStorage
     }
     
     var recordName:String {
-        return String(describing: Self.self)
+        return String(describing: type(of: self))
     }
 }

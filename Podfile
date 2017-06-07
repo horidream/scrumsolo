@@ -8,7 +8,7 @@ target 'ScrumSolo' do
 
   # Pods for ScrumSolo
     pod 'FMDB'
-    pod 'Alamofire'
+    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git', :branch => 'swift4'
     
     pod 'Shifu', :path => "../shifu"
 end

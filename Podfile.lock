@@ -6,19 +6,27 @@ PODS:
   - Shifu (0.1.1)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift4`)
   - FMDB
   - Shifu (from `../shifu`)
 
 EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift4
+    :git: https://github.com/Alamofire/Alamofire.git
   Shifu:
-    :path: ../shifu
+    :path: "../shifu"
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 9d6d16316edfb8ece47abebe1621d05ee6b0e6ed
+    :git: https://github.com/Alamofire/Alamofire.git
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Alamofire: 4c2bf7fa03c4a626163606de0a417568c270575e
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Shifu: ffdde1dee3fa84b14be026afb48a5df119d876e9
 
-PODFILE CHECKSUM: 4d604d30b0d02987aa52c2c7b16cb1cbee4950a8
+PODFILE CHECKSUM: 9f4fdc0b1920a34a94727ce656dda22949acf15e
 
 COCOAPODS: 1.1.1
