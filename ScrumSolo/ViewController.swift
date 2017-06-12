@@ -16,7 +16,9 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         let query = CKQuery(recordType: "Story", predicate: NSPredicate(value: true))
-        Story.cloudQuery(query){ (stories) in
+        print(query)
+        Story.cloudQuery(query){ (stories, error) in
+            print(error as Any)
             stories.forEach({ (story) in
                 print(story.priority)
             })

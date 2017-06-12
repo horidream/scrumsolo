@@ -130,7 +130,7 @@ extension ManageableItem: CustomStringConvertible{
 
 extension Array where Element:ManageableItem{
     func cloudSave(complete:@escaping (AsyncResponse)->Void){
-        Shared.cloudStorage.modify(recordsToSave: self.flatMap{ $0.getOrCreateRecord() }) { (records, ids, error) in
+        Element.cloudStorage.modify(recordsToSave: self.flatMap{ $0.getOrCreateRecord() }) { (records, ids, error) in
             if error == nil{
                 zip(self, records!).forEach{ $0.0.record = $0.1 }
                 complete(AsyncResponse(success: true, payload: records))
@@ -141,7 +141,7 @@ extension Array where Element:ManageableItem{
     }
     
     func cloudDelete(complete:@escaping (AsyncResponse)->Void){
-        Shared.cloudStorage.modify(recordsToSave:nil, recordIDsToDelete: self.flatMap{ $0.record?.recordID } ) { (records, ids, error) in
+        Element.cloudStorage.modify(recordsToSave:nil, recordIDsToDelete: self.flatMap{ $0.record?.recordID } ) { (records, ids, error) in
                 if error == nil{
                     self.forEach{ $0.record = nil }
                     complete(AsyncResponse(success: true, payload: nil))

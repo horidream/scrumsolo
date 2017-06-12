@@ -15,13 +15,13 @@ class CloudStorage{
         return container.privateCloudDatabase
     }
     
-    func query(_ query:CKQuery, zoneId:CKRecordZoneID? = nil, callback:@escaping ([CKRecord])->Void){
+    func query(_ query:CKQuery, zoneId:CKRecordZoneID? = nil, callback:@escaping ([CKRecord], Error?)->Void){
         privateDB.perform(query, inZoneWith: zoneId) { (records, error) in
             let empty = Array<CKRecord>()
             if error == nil{
-                callback(records ?? empty)
+                callback(records ?? empty, nil)
             }else{
-                callback(empty)
+                callback(empty, error)
             }
         }
     }
