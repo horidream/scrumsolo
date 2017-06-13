@@ -1,14 +1,24 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N5k-7x-Z8C">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="fontawesome-webfont.ttf">
+            <string>FontAwesome</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Epic Backlog View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EpicBacklogViewController" customModule="ScrumSolo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +26,104 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KHf-sP-dn8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpicHead" rowHeight="256" id="TQc-H5-Oox">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="256"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TQc-H5-Oox" id="o3c-Lt-cwa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="255.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zen" translatesAutoresizingMaskIntoConstraints="NO" id="WP4-Ti-RXi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="WP4-Ti-RXi" secondAttribute="height" multiplier="375:256" id="V46-fB-DB6"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WP4-Ti-RXi" firstAttribute="top" secondItem="o3c-Lt-cwa" secondAttribute="top" id="7th-b0-AcG"/>
+                                                <constraint firstItem="WP4-Ti-RXi" firstAttribute="leading" secondItem="o3c-Lt-cwa" secondAttribute="leading" id="COU-ol-jcC"/>
+                                                <constraint firstAttribute="trailing" secondItem="WP4-Ti-RXi" secondAttribute="trailing" id="SbP-Fu-phl"/>
+                                                <constraint firstAttribute="bottom" secondItem="WP4-Ti-RXi" secondAttribute="bottom" id="W0v-hS-fd6"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpicCell" rowHeight="92" id="8pL-rE-RW5">
+                                        <rect key="frame" x="0.0" y="284" width="375" height="92"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8pL-rE-RW5" id="8mc-SB-fHN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-i1-Y4m">
+                                                    <rect key="frame" x="8" y="8" width="307" height="76"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="76" id="32X-10-UmE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKB-ou-7V4">
+                                                    <rect key="frame" x="315" y="8" width="60" height="75.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="hc0-GH-iaq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="36"/>
+                                                    <state key="normal" title=""/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="LKB-ou-7V4" secondAttribute="bottom" constant="8" id="BIx-GA-aSN"/>
+                                                <constraint firstAttribute="trailing" secondItem="LKB-ou-7V4" secondAttribute="trailing" id="OMm-L5-bD2"/>
+                                                <constraint firstItem="Q2g-i1-Y4m" firstAttribute="top" secondItem="8mc-SB-fHN" secondAttribute="top" constant="8" id="UHK-bV-OaI"/>
+                                                <constraint firstItem="Q2g-i1-Y4m" firstAttribute="leading" secondItem="8mc-SB-fHN" secondAttribute="leading" constant="8" id="YIl-WR-1bn"/>
+                                                <constraint firstItem="LKB-ou-7V4" firstAttribute="top" secondItem="8mc-SB-fHN" secondAttribute="top" constant="8" id="nZH-ef-VNU"/>
+                                                <constraint firstAttribute="bottom" secondItem="Q2g-i1-Y4m" secondAttribute="bottom" constant="8" id="u0C-8C-V29"/>
+                                                <constraint firstItem="LKB-ou-7V4" firstAttribute="leading" secondItem="Q2g-i1-Y4m" secondAttribute="trailing" id="u69-AC-w3J"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="EKh-2f-6mA"/>
+                    <connections>
+                        <outlet property="tableView" destination="KHf-sP-dn8" id="efH-lm-ly0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="709.60000000000002" y="-218.1409295352324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="A6s-H3-dAt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N5k-7x-Z8C" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XTh-cM-3n5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="xUA-f9-XGk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9s-RX-rY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54" y="-218"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="zen" width="700" height="420"/>
+    </resources>
 </document>
