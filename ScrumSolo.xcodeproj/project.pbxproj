@@ -11,6 +11,7 @@
 		1509EC8F1EC064620001728C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC8D1EC064620001728C /* Main.storyboard */; };
 		1509EC911EC064620001728C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC901EC064620001728C /* Assets.xcassets */; };
 		1509EC941EC064620001728C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC921EC064620001728C /* LaunchScreen.storyboard */; };
+		1571CBF91EF1239300588259 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1571CBF81EF1238200588259 /* fontawesome-webfont.ttf */; };
 		15A3535F1EC98D2600857EF6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3535E1EC98D2600857EF6 /* CloudKit.framework */; };
 		2DCDF2CAD7E899E212D62A5F /* Pods_ScrumSolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */; };
 		99604DE71EC1363D0029F619 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE61EC1363D0029F619 /* Item.swift */; };
@@ -23,7 +24,6 @@
 		998AEFAD1EF043670047E155 /* EpicBacklogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1509EC8B1EC064620001728C /* EpicBacklogViewController.swift */; };
 		998AEFB31EF04A4B0047E155 /* CreateNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AEFB11EF04A4B0047E155 /* CreateNewCell.swift */; };
 		998AEFB41EF04A4B0047E155 /* CreateNewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */; };
-		998AEFB51EF0516B0047E155 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 998AEFAE1EF046530047E155 /* fontawesome-webfont.ttf */; };
 		99CEA1AA1ED987320003B33A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CEA1A91ED987320003B33A /* Story.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +36,7 @@
 		1509EC901EC064620001728C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1509EC931EC064620001728C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1509EC951EC064620001728C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1571CBF81EF1238200588259 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		15A3535D1EC98D2200857EF6 /* ScrumSolo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScrumSolo.entitlements; sourceTree = "<group>"; };
 		15A3535E1EC98D2600857EF6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		6C9EF2A2E3CC3CA5256C987C /* Pods-ScrumSolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		998418A51EC852C4008ADCE8 /* CloudStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudStorage.swift; sourceTree = "<group>"; };
 		998418A71EC8C227008ADCE8 /* LocalManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalManageable.swift; sourceTree = "<group>"; };
 		998418A91EC8C250008ADCE8 /* CloudManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudManageable.swift; sourceTree = "<group>"; };
-		998AEFAE1EF046530047E155 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fontawesome-webfont.ttf"; path = "../../../../Downloads/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		998AEFB11EF04A4B0047E155 /* CreateNewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewCell.swift; sourceTree = "<group>"; };
 		998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewCell.xib; sourceTree = "<group>"; };
 		99CEA1A91ED987320003B33A /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		99604DE51EC131470029F619 /* support */ = {
 			isa = PBXGroup;
 			children = (
-				998AEFAE1EF046530047E155 /* fontawesome-webfont.ttf */,
+				1571CBF81EF1238200588259 /* fontawesome-webfont.ttf */,
 				1509EC901EC064620001728C /* Assets.xcassets */,
 				15A3535D1EC98D2200857EF6 /* ScrumSolo.entitlements */,
 				99604DEA1EC200590029F619 /* test.playground */,
@@ -241,7 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				998AEFB51EF0516B0047E155 /* fontawesome-webfont.ttf in Resources */,
+				1571CBF91EF1239300588259 /* fontawesome-webfont.ttf in Resources */,
 				998AEFB41EF04A4B0047E155 /* CreateNewCell.xib in Resources */,
 				1509EC941EC064620001728C /* LaunchScreen.storyboard in Resources */,
 				1509EC911EC064620001728C /* Assets.xcassets in Resources */,

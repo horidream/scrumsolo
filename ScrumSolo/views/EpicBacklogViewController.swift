@@ -15,11 +15,38 @@ class EpicBacklogViewController: UIViewController {
         self.title = "Epic Backlogs"
         self.tableView.register(UINib(nibName: "CreateNewCell", bundle: nil), forCellReuseIdentifier: "EpicNew")
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 140
     }
 }
 
+
+extension EpicBacklogViewController:UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch (indexPath.section, indexPath.row) {
+        case (2, _):
+            print("crate new cell")
+            let alert = UIAlertController(title: "Create New Epic", message: "xxx", preferredStyle: .alert)
+            
+            alert.addTextField(configurationHandler: { (tf) in
+                var frame = tf.frame
+                frame = CGRect(origin: frame.origin, size: CGSize(width: frame.size.width, height: 200))
+                tf.frame = frame
+                
+            })
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+               self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        default:()
+            
+        }
+    }
+}
 
 extension EpicBacklogViewController:UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {

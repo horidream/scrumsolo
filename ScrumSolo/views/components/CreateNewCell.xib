@@ -21,7 +21,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[+] Create New" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jg6-VE-nVx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="44" id="Pz4-e6-VSI"/>
+                            <constraint firstAttribute="height" priority="999" constant="44" id="Pz4-e6-VSI"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.14832628110000001" green="0.28512405229999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
