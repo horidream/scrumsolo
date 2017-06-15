@@ -12,6 +12,8 @@
 		1509EC911EC064620001728C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC901EC064620001728C /* Assets.xcassets */; };
 		1509EC941EC064620001728C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1509EC921EC064620001728C /* LaunchScreen.storyboard */; };
 		1571CBF91EF1239300588259 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1571CBF81EF1238200588259 /* fontawesome-webfont.ttf */; };
+		1571CBFC1EF265B200588259 /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1571CBFA1EF265B200588259 /* StoryTableViewCell.swift */; };
+		1571CBFD1EF265B200588259 /* StoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1571CBFB1EF265B200588259 /* StoryTableViewCell.xib */; };
 		15A3535F1EC98D2600857EF6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3535E1EC98D2600857EF6 /* CloudKit.framework */; };
 		2DCDF2CAD7E899E212D62A5F /* Pods_ScrumSolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */; };
 		99604DE71EC1363D0029F619 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE61EC1363D0029F619 /* Item.swift */; };
@@ -37,6 +39,8 @@
 		1509EC931EC064620001728C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1509EC951EC064620001728C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1571CBF81EF1238200588259 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		1571CBFA1EF265B200588259 /* StoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
+		1571CBFB1EF265B200588259 /* StoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryTableViewCell.xib; sourceTree = "<group>"; };
 		15A3535D1EC98D2200857EF6 /* ScrumSolo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScrumSolo.entitlements; sourceTree = "<group>"; };
 		15A3535E1EC98D2600857EF6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		6C9EF2A2E3CC3CA5256C987C /* Pods-ScrumSolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 			children = (
 				998AEFB11EF04A4B0047E155 /* CreateNewCell.swift */,
 				998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */,
+				1571CBFA1EF265B200588259 /* StoryTableViewCell.swift */,
+				1571CBFB1EF265B200588259 /* StoryTableViewCell.xib */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1571CBF91EF1239300588259 /* fontawesome-webfont.ttf in Resources */,
+				1571CBFD1EF265B200588259 /* StoryTableViewCell.xib in Resources */,
 				998AEFB41EF04A4B0047E155 /* CreateNewCell.xib in Resources */,
 				1509EC941EC064620001728C /* LaunchScreen.storyboard in Resources */,
 				1509EC911EC064620001728C /* Assets.xcassets in Resources */,
@@ -315,6 +322,7 @@
 				1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */,
 				998418A41EC3E599008ADCE8 /* Shared.swift in Sources */,
 				99CEA1AA1ED987320003B33A /* Story.swift in Sources */,
+				1571CBFC1EF265B200588259 /* StoryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

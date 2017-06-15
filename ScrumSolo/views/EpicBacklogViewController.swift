@@ -30,10 +30,8 @@ extension EpicBacklogViewController:UITableViewDelegate{
             let alert = UIAlertController(title: "Create New Epic", message: "xxx", preferredStyle: .alert)
             
             alert.addTextField(configurationHandler: { (tf) in
-                var frame = tf.frame
-                frame = CGRect(origin: frame.origin, size: CGSize(width: frame.size.width, height: 200))
-                tf.frame = frame
                 
+                tf.placeholder = "Epic Story Name"
             })
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
