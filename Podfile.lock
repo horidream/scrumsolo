@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.4.0)
+  - BadgeSwift (5.0.1)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift4`)
+  - BadgeSwift
   - FMDB
   - Shifu (from `../shifu`)
 
@@ -24,9 +26,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 4c2bf7fa03c4a626163606de0a417568c270575e
+  BadgeSwift: 3defa56f504bfb46f2300122c4a565ec9e405c1e
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   Shifu: ffdde1dee3fa84b14be026afb48a5df119d876e9
 
-PODFILE CHECKSUM: 52072e1faeb141c577b344331ff8981bb6a67f42
+PODFILE CHECKSUM: 1dec91a2eacf3d7de0a6153a3489d949ede4ac42
 
 COCOAPODS: 1.1.1
