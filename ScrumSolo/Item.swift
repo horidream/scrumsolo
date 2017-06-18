@@ -21,7 +21,14 @@ class Item{
     var state:ItemState = .todo
 }
 
-class ManageableItem: Item, LocalManageable, CloudManageable{
+class ManageableItem: Item, LocalManageable, CloudManageable, Equatable{
+    static func ==(lhs: ManageableItem, rhs: ManageableItem) -> Bool {
+        if let id1 = lhs.id, let id2 = rhs.id{
+            return id1 == id2
+        }
+        return false
+    }
+    
 
     var id:Int64?
     var record:CKRecord?
@@ -30,10 +37,10 @@ class ManageableItem: Item, LocalManageable, CloudManageable{
     static let localStorage: LocalStorage = Shared.localStorage
     
     
-    override init(){
+    required init(title:String, descriptions:String = ""){
         super.init()
-        self.title = "Untitled"
-        self.descriptions = ""
+        self.title = title
+        self.descriptions = descriptions
     }
     
     required init(_ rst: FMResultSet) {
@@ -116,14 +123,10 @@ class ManageableItem: Item, LocalManageable, CloudManageable{
 
 extension ManageableItem: CustomStringConvertible{
     
-    convenience init(title:String, descriptions:String = ""){
-        self.init()
-        self.title = title
-        self.descriptions = descriptions
-    }
+    
     
     var description:String{
-        return "\(type(of:self))-\(self.title!)"
+        return "\(type(of:self))-\(self.title!)-\(id ?? 0)"
     }
 }
 

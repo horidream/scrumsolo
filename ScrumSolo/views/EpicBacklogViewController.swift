@@ -11,6 +11,7 @@ import CloudKit
 
 class EpicBacklogViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    var epics:[Epic] = []
     override func viewDidLoad() {
         self.title = "Epic Backlogs"
         self.tableView.register(UINib(nibName: "CreateNewCell", bundle: nil), forCellReuseIdentifier: "EpicNew")
@@ -18,6 +19,8 @@ class EpicBacklogViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 140
+        epics = Epic.fetch("select * from Epic")
+        self.tableView.reloadData()
     }
 }
 
@@ -35,6 +38,15 @@ extension EpicBacklogViewController:UITableViewDelegate{
             })
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
+                if let title = alert.textFields?.first?.text{
+                    let epic = Epic(title: title)
+                    epic.save()
+                    print(epic)
+                    if(epic.id != nil){
+                        self.epics.append(epic)
+                        self.tableView.reloadData()
+                    }
+                }
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
                self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
@@ -56,7 +68,7 @@ extension EpicBacklogViewController:UITableViewDataSource{
         case 0,2:
             return 1
         case 1:
-            return 2
+            return epics.count
         default:
             return 0
         }
@@ -68,13 +80,15 @@ extension EpicBacklogViewController:UITableViewDataSource{
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "EpicHead")!
             return cell
         case 1:
-            let cell = self.tableView.dequeueReusableCell(withIdentifier: "EpicCell")!
-            return cell
+            if let cell = self.tableView.dequeueReusableCell(withIdentifier: "EpicCell") as? EpicTableViewCell{
+                cell.title.text = epics[indexPath.row].title
+                return cell
+            }
         case 2:
             let cell = self.tableView.dequeueReusableCell(withIdentifier: "EpicNew")!
             return cell
-        default:
-            return UITableViewCell()
+        default:()
         }
+        return UITableViewCell()
     }
 }

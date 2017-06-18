@@ -1,4 +1,12 @@
 //
+//  Epic.swift
+//  ScrumSolo
+//
+//  Created by Baoli Zhai on 16/06/2017.
+//  Copyright © 2017 DreamStudio. All rights reserved.
+//
+
+//
 //  Story.swift
 //  ScrumSolo
 //
@@ -11,11 +19,14 @@ import Shifu
 import CloudKit
 import FMDB
 
-class Story:ManageableItem{
+class Epic:ManageableItem{
     var priority:UInt64 = 0
-    weak var parent:Epic?
-    var children:[Task] = []
-    
+    var children:[Story] = []
+    static func fetch(_ sql:String, args:[Any]! = [])->[Epic]{
+        return localStorage.query(sql, args:args) { (rst) -> Epic in
+            return Epic(rst)
+        }
+    }
     required init(_ record: CKRecord) {
         super.init(record)
         self.priority = record["priority"] as! UInt64
@@ -28,14 +39,13 @@ class Story:ManageableItem{
     required init(title:String, descriptions:String = ""){
         super.init(title: title, descriptions: descriptions)
     }
-    
-    func addChild(_ child:Task){
+    func addChild(_ child:Story){
         if(!children.contains(child)){
             children.append(child)
         }
     }
     
-    func removeChild(_ child:Task){
+    func removeChild(_ child:Story){
         if let index = children.index(where: { (task) -> Bool in
             return child == task
         }){
@@ -44,14 +54,14 @@ class Story:ManageableItem{
     }
     
     override func create() -> Int64? {
-        if localStorage.exe("insert into Story (title, descriptions, state, priority) values(?, ?, ?, ?)", args: [title, descriptions, state.rawValue, priority]){
+        if localStorage.exe("insert into Epic (title, descriptions, state, priority) values(?, ?, ?, ?)", args: [title, descriptions, state.rawValue, priority]){
             return localStorage.lastInsertRowId
         }
         return nil
     }
     
     override func update() {
-        _ = localStorage.exe("update Story set (title, descriptions, state, priority) = (?, ?, ?, ?) where id=?", args: [title, descriptions, state.rawValue, priority,  id!])
+        _ = localStorage.exe("update Epic set (title, descriptions, state, priority) = (?, ?, ?, ?) where id=?", args: [title, descriptions, state.rawValue, priority,  id!])
     }
     
     override func setRecordProperties(_ record: CKRecord) -> CKRecord {
@@ -62,5 +72,6 @@ class Story:ManageableItem{
         return record
     }
 }
+
 
 

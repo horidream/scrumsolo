@@ -27,6 +27,8 @@
 		998AEFB31EF04A4B0047E155 /* CreateNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AEFB11EF04A4B0047E155 /* CreateNewCell.swift */; };
 		998AEFB41EF04A4B0047E155 /* CreateNewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */; };
 		99CEA1AA1ED987320003B33A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CEA1A91ED987320003B33A /* Story.swift */; };
+		99DDE77C1EF3FD7C00C7631A /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDE77B1EF3FD7C00C7631A /* Epic.swift */; };
+		99E5F9E11EF4494200C2B80C /* EpicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E5F9E01EF4494200C2B80C /* EpicTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		998AEFB11EF04A4B0047E155 /* CreateNewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewCell.swift; sourceTree = "<group>"; };
 		998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewCell.xib; sourceTree = "<group>"; };
 		99CEA1A91ED987320003B33A /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		99DDE77B1EF3FD7C00C7631A /* Epic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epic.swift; sourceTree = "<group>"; };
+		99E5F9E01EF4494200C2B80C /* EpicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicTableViewCell.swift; sourceTree = "<group>"; };
 		D7CE18C27638D8D1E0FDCA36 /* Pods-ScrumSolo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +133,7 @@
 				99604DE61EC1363D0029F619 /* Item.swift */,
 				99CEA1A91ED987320003B33A /* Story.swift */,
 				996668C81EE5B252008E8C93 /* Task.swift */,
+				99DDE77B1EF3FD7C00C7631A /* Epic.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 				998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */,
 				1571CBFA1EF265B200588259 /* StoryTableViewCell.swift */,
 				1571CBFB1EF265B200588259 /* StoryTableViewCell.xib */,
+				99E5F9E01EF4494200C2B80C /* EpicTableViewCell.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			files = (
 				998AEFAD1EF043670047E155 /* EpicBacklogViewController.swift in Sources */,
 				99604DE71EC1363D0029F619 /* Item.swift in Sources */,
+				99E5F9E11EF4494200C2B80C /* EpicTableViewCell.swift in Sources */,
 				996668C91EE5B252008E8C93 /* Task.swift in Sources */,
 				998418A81EC8C227008ADCE8 /* LocalManageable.swift in Sources */,
 				99604DE91EC1FDE10029F619 /* LocalStorage.swift in Sources */,
@@ -320,6 +327,7 @@
 				998418A61EC852C4008ADCE8 /* CloudStorage.swift in Sources */,
 				998AEFB31EF04A4B0047E155 /* CreateNewCell.swift in Sources */,
 				1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */,
+				99DDE77C1EF3FD7C00C7631A /* Epic.swift in Sources */,
 				998418A41EC3E599008ADCE8 /* Shared.swift in Sources */,
 				99CEA1AA1ED987320003B33A /* Story.swift in Sources */,
 				1571CBFC1EF265B200588259 /* StoryTableViewCell.swift in Sources */,

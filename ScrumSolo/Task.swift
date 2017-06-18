@@ -8,9 +8,6 @@
 
 import Foundation
 
-class Task:ManageableItem, Equatable{
+class Task:ManageableItem{
     weak var parent:Story?
-    static func == (lhs: Task, rhs: Task) -> Bool {
-        return lhs.title == rhs.title  && lhs.descriptions == rhs.descriptions
-    }
 }
