@@ -8,6 +8,8 @@
 
 import Foundation
 import CloudKit
+import Shifu
+
 
 struct Shared{
     static var localStorage:LocalStorage {

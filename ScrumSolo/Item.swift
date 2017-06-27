@@ -9,7 +9,7 @@
 import Foundation
 import FMDB
 import CloudKit
-
+import Shifu
 
 enum ItemState:Int{
     case todo = 0, inprogress, done

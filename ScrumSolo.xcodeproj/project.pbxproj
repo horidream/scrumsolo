@@ -17,12 +17,8 @@
 		15A3535F1EC98D2600857EF6 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3535E1EC98D2600857EF6 /* CloudKit.framework */; };
 		2DCDF2CAD7E899E212D62A5F /* Pods_ScrumSolo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 059B3B256DB3DFE54C6ABFF2 /* Pods_ScrumSolo.framework */; };
 		99604DE71EC1363D0029F619 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE61EC1363D0029F619 /* Item.swift */; };
-		99604DE91EC1FDE10029F619 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99604DE81EC1FDE10029F619 /* LocalStorage.swift */; };
 		996668C91EE5B252008E8C93 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996668C81EE5B252008E8C93 /* Task.swift */; };
 		998418A41EC3E599008ADCE8 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A31EC3E599008ADCE8 /* Shared.swift */; };
-		998418A61EC852C4008ADCE8 /* CloudStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A51EC852C4008ADCE8 /* CloudStorage.swift */; };
-		998418A81EC8C227008ADCE8 /* LocalManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A71EC8C227008ADCE8 /* LocalManageable.swift */; };
-		998418AA1EC8C250008ADCE8 /* CloudManageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998418A91EC8C250008ADCE8 /* CloudManageable.swift */; };
 		998AEFAD1EF043670047E155 /* EpicBacklogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1509EC8B1EC064620001728C /* EpicBacklogViewController.swift */; };
 		998AEFB31EF04A4B0047E155 /* CreateNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AEFB11EF04A4B0047E155 /* CreateNewCell.swift */; };
 		998AEFB41EF04A4B0047E155 /* CreateNewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */; };
@@ -47,13 +43,9 @@
 		15A3535E1EC98D2600857EF6 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		6C9EF2A2E3CC3CA5256C987C /* Pods-ScrumSolo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScrumSolo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo.release.xcconfig"; sourceTree = "<group>"; };
 		99604DE61EC1363D0029F619 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		99604DE81EC1FDE10029F619 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		99604DEA1EC200590029F619 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		996668C81EE5B252008E8C93 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		998418A31EC3E599008ADCE8 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
-		998418A51EC852C4008ADCE8 /* CloudStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudStorage.swift; sourceTree = "<group>"; };
-		998418A71EC8C227008ADCE8 /* LocalManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalManageable.swift; sourceTree = "<group>"; };
-		998418A91EC8C250008ADCE8 /* CloudManageable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudManageable.swift; sourceTree = "<group>"; };
 		998AEFB11EF04A4B0047E155 /* CreateNewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewCell.swift; sourceTree = "<group>"; };
 		998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewCell.xib; sourceTree = "<group>"; };
 		99CEA1A91ED987320003B33A /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
@@ -141,10 +133,6 @@
 		996668CB1EE5B27D008E8C93 /* manageable */ = {
 			isa = PBXGroup;
 			children = (
-				998418A71EC8C227008ADCE8 /* LocalManageable.swift */,
-				998418A91EC8C250008ADCE8 /* CloudManageable.swift */,
-				99604DE81EC1FDE10029F619 /* LocalStorage.swift */,
-				998418A51EC852C4008ADCE8 /* CloudStorage.swift */,
 				998418A31EC3E599008ADCE8 /* Shared.swift */,
 			);
 			name = manageable;
@@ -277,7 +265,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		60EB011CCE62CC1C968534F3 /* [CP] Embed Pods Frameworks */ = {
@@ -321,10 +309,6 @@
 				99604DE71EC1363D0029F619 /* Item.swift in Sources */,
 				99E5F9E11EF4494200C2B80C /* EpicTableViewCell.swift in Sources */,
 				996668C91EE5B252008E8C93 /* Task.swift in Sources */,
-				998418A81EC8C227008ADCE8 /* LocalManageable.swift in Sources */,
-				99604DE91EC1FDE10029F619 /* LocalStorage.swift in Sources */,
-				998418AA1EC8C250008ADCE8 /* CloudManageable.swift in Sources */,
-				998418A61EC852C4008ADCE8 /* CloudStorage.swift in Sources */,
 				998AEFB31EF04A4B0047E155 /* CreateNewCell.swift in Sources */,
 				1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */,
 				99DDE77C1EF3FD7C00C7631A /* Epic.swift in Sources */,
