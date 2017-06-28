@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N5k-7x-Z8C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="N5k-7x-Z8C">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="fontawesome-webfont.ttf">
-            <string>FontAwesome</string>
+        <array key="Palatino.ttc">
+            <string>Palatino-Roman</string>
         </array>
     </customFonts>
     <scenes>
@@ -53,39 +54,61 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpicCell" rowHeight="92" id="8pL-rE-RW5" customClass="EpicTableViewCell" customModule="ScrumSolo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="284" width="375" height="92"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpicCell" rowHeight="159" id="8pL-rE-RW5" customClass="EpicTableViewCell" customModule="ScrumSolo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="284" width="375" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8pL-rE-RW5" id="8mc-SB-fHN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="158.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-i1-Y4m">
-                                                    <rect key="frame" x="8" y="8" width="307" height="76"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q2g-i1-Y4m">
+                                                    <rect key="frame" x="8" y="8" width="359" height="73"/>
+                                                    <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKB-ou-7V4">
-                                                    <rect key="frame" x="315" y="8" width="60" height="75.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created at 12/12/2012" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXf-4C-Jd1">
+                                                    <rect key="frame" x="8" y="89" width="359" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                                    <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="updated at 12/12/2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60w-Xj-qPg">
+                                                    <rect key="frame" x="8" y="126" width="359" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                                    <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p5h-Rx-B34">
+                                                    <rect key="frame" x="8" y="148.5" width="359" height="2"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="hc0-GH-iaq"/>
+                                                        <constraint firstAttribute="height" constant="2" id="KKw-Vl-aTb"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="36"/>
-                                                    <state key="normal" title=""/>
-                                                    <connections>
-                                                        <action selector="onEdit:" destination="8pL-rE-RW5" eventType="touchUpInside" id="l3x-d2-mQm"/>
-                                                    </connections>
-                                                </button>
+                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value: 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPv-vO-Bdz">
+                                                    <rect key="frame" x="8" y="99" width="359" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" red="0.14832628110000001" green="0.28512405229999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="LKB-ou-7V4" secondAttribute="bottom" constant="8" id="BIx-GA-aSN"/>
-                                                <constraint firstAttribute="trailing" secondItem="LKB-ou-7V4" secondAttribute="trailing" id="OMm-L5-bD2"/>
+                                                <constraint firstItem="60w-Xj-qPg" firstAttribute="leading" secondItem="8mc-SB-fHN" secondAttribute="leadingMargin" id="0zw-6Z-n2v"/>
+                                                <constraint firstItem="p5h-Rx-B34" firstAttribute="trailing" secondItem="8mc-SB-fHN" secondAttribute="trailingMargin" id="5Yq-fe-m7A"/>
+                                                <constraint firstItem="gXf-4C-Jd1" firstAttribute="leading" secondItem="8mc-SB-fHN" secondAttribute="leadingMargin" id="90P-Fi-WBP"/>
+                                                <constraint firstAttribute="bottom" secondItem="p5h-Rx-B34" secondAttribute="bottom" constant="8" id="JHF-Ul-lmn"/>
+                                                <constraint firstItem="gXf-4C-Jd1" firstAttribute="top" secondItem="Q2g-i1-Y4m" secondAttribute="bottom" constant="8" id="JbM-nI-sO6"/>
+                                                <constraint firstItem="oPv-vO-Bdz" firstAttribute="leading" secondItem="8mc-SB-fHN" secondAttribute="leadingMargin" id="MsY-F4-atw"/>
+                                                <constraint firstItem="oPv-vO-Bdz" firstAttribute="centerY" secondItem="gXf-4C-Jd1" secondAttribute="centerY" id="P1I-nd-mZa"/>
+                                                <constraint firstAttribute="trailing" secondItem="Q2g-i1-Y4m" secondAttribute="trailing" constant="8" id="Skx-Ro-kLx"/>
                                                 <constraint firstItem="Q2g-i1-Y4m" firstAttribute="top" secondItem="8mc-SB-fHN" secondAttribute="top" constant="8" id="UHK-bV-OaI"/>
+                                                <constraint firstItem="p5h-Rx-B34" firstAttribute="leading" secondItem="8mc-SB-fHN" secondAttribute="leadingMargin" id="VOi-bW-zNF"/>
+                                                <constraint firstItem="60w-Xj-qPg" firstAttribute="trailing" secondItem="8mc-SB-fHN" secondAttribute="trailingMargin" id="WUJ-Fv-kuB"/>
                                                 <constraint firstItem="Q2g-i1-Y4m" firstAttribute="leading" secondItem="8mc-SB-fHN" secondAttribute="leading" constant="8" id="YIl-WR-1bn"/>
-                                                <constraint firstItem="LKB-ou-7V4" firstAttribute="top" secondItem="8mc-SB-fHN" secondAttribute="top" constant="8" id="nZH-ef-VNU"/>
-                                                <constraint firstAttribute="bottom" secondItem="Q2g-i1-Y4m" secondAttribute="bottom" constant="8" id="u0C-8C-V29"/>
-                                                <constraint firstItem="LKB-ou-7V4" firstAttribute="leading" secondItem="Q2g-i1-Y4m" secondAttribute="trailing" id="u69-AC-w3J"/>
+                                                <constraint firstItem="60w-Xj-qPg" firstAttribute="top" secondItem="gXf-4C-Jd1" secondAttribute="bottom" constant="-1" id="jWY-VK-BIa"/>
+                                                <constraint firstItem="oPv-vO-Bdz" firstAttribute="trailing" secondItem="8mc-SB-fHN" secondAttribute="trailingMargin" id="pUi-Z6-bqX"/>
+                                                <constraint firstItem="p5h-Rx-B34" firstAttribute="top" secondItem="60w-Xj-qPg" secondAttribute="bottom" constant="8" id="se7-eB-eMO"/>
+                                                <constraint firstItem="gXf-4C-Jd1" firstAttribute="trailing" secondItem="8mc-SB-fHN" secondAttribute="trailingMargin" id="zbM-C0-GHV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

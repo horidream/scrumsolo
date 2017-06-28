@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
     :branch: swift4
     :git: https://github.com/Alamofire/Alamofire.git
   Shifu:
-    :path: ../shifu
+    :path: "../shifu"
 
 CHECKOUT OPTIONS:
   Alamofire:
@@ -33,4 +33,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 1dec91a2eacf3d7de0a6153a3489d949ede4ac42
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.1.1

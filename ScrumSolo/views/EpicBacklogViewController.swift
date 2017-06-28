@@ -19,6 +19,7 @@ class EpicBacklogViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 140
+        self.tableView.separatorStyle = .none
         epics = Epic.fetch("select * from Epic")
         self.tableView.reloadData()
     }
