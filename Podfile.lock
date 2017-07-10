@@ -1,9 +1,9 @@
 PODS:
   - Alamofire (4.4.0)
   - BadgeSwift (5.0.1)
-  - FMDB (2.6.2):
-    - FMDB/standard (= 2.6.2)
-  - FMDB/standard (2.6.2)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
   - Shifu (0.1.2):
     - FMDB
 
@@ -28,7 +28,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 4c2bf7fa03c4a626163606de0a417568c270575e
   BadgeSwift: 3defa56f504bfb46f2300122c4a565ec9e405c1e
-  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   Shifu: 69e46df8bbd0ea705ee74ee6c09728f5a150fb04
 
 PODFILE CHECKSUM: 1dec91a2eacf3d7de0a6153a3489d949ede4ac42

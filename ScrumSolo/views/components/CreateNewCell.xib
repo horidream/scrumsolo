@@ -28,6 +28,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="jg6-VE-nVx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="K34-tz-Wze"/>
                     <constraint firstItem="jg6-VE-nVx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="awl-KS-kS8"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Shifu
 
 class EpicTableViewCell: UITableViewCell {
 
@@ -15,21 +16,25 @@ class EpicTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let bg = UIView(frame: self.bounds)
-//        bg.backgroundColor = .red
+        let bg = UIView()
+        bg.backgroundColor = .black
         sub = UIView(frame: self.bounds.insetBy(dx: 5, dy: 5))
         bg.addSubview(sub)
-        self.backgroundView = bg
-        
+        self.contentView.addSubview(bg)
+        self.backgroundColor = .clear
+        self.selectionStyle = .none
+//        self.backgroundView = bg
+//        self.selectedBackgroundView = bg
     }
     
     
     override func layoutSubviews() {
+        self.backgroundView?.frame = self.bounds
         sub.frame = self.bounds.insetBy(dx: 2, dy: 2)
         let ly = sub.layer
 //        ly.backgroundColor = UIColor.yellow.cgColor
 //        ly.masksToBounds = true
-        ly.cornerRadius = 8
+        ly.cornerRadius = 6
         ly.borderColor = UIColor.lightGray.cgColor
         ly.borderWidth = 1.0
         ly.shadowRadius = 5.0

@@ -27,6 +27,21 @@ class EpicBacklogViewController: UIViewController {
 
 
 extension EpicBacklogViewController:UITableViewDelegate{
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset
+        if(offset.y < 0){
+            let headerView = self.tableView.cellForRow(at: IndexPath(row: 0, section: 0))!
+//            var frame = attr.frame
+//            frame.size.height = max(0, headerReferenceSize.height + fabs(offset.y))
+//            frame.origin.y += offset.y
+//            attr.frame = frame
+            let frame = CGRect(x: 0, y: offset.y, width: scrollView.contentSize.width, height:scrollView.contentSize.width * 256 / 375 - offset.y )
+            headerView.frame = frame
+        }
+    }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
         case (2, _):

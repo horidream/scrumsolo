@@ -22,6 +22,7 @@
 		998AEFAD1EF043670047E155 /* EpicBacklogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1509EC8B1EC064620001728C /* EpicBacklogViewController.swift */; };
 		998AEFB31EF04A4B0047E155 /* CreateNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998AEFB11EF04A4B0047E155 /* CreateNewCell.swift */; };
 		998AEFB41EF04A4B0047E155 /* CreateNewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */; };
+		999414091F13B41E00175951 /* StoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999414081F13B41E00175951 /* StoryTableViewController.swift */; };
 		99CEA1AA1ED987320003B33A /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CEA1A91ED987320003B33A /* Story.swift */; };
 		99DDE77C1EF3FD7C00C7631A /* Epic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DDE77B1EF3FD7C00C7631A /* Epic.swift */; };
 		99E5F9E11EF4494200C2B80C /* EpicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E5F9E01EF4494200C2B80C /* EpicTableViewCell.swift */; };
@@ -48,6 +49,7 @@
 		998418A31EC3E599008ADCE8 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		998AEFB11EF04A4B0047E155 /* CreateNewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewCell.swift; sourceTree = "<group>"; };
 		998AEFB21EF04A4B0047E155 /* CreateNewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateNewCell.xib; sourceTree = "<group>"; };
+		999414081F13B41E00175951 /* StoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableViewController.swift; sourceTree = "<group>"; };
 		99CEA1A91ED987320003B33A /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		99DDE77B1EF3FD7C00C7631A /* Epic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Epic.swift; sourceTree = "<group>"; };
 		99E5F9E01EF4494200C2B80C /* EpicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				998AEFB01EF049F10047E155 /* components */,
 				1509EC8B1EC064620001728C /* EpicBacklogViewController.swift */,
+				999414081F13B41E00175951 /* StoryTableViewController.swift */,
 				1509EC8D1EC064620001728C /* Main.storyboard */,
 			);
 			path = views;
@@ -308,6 +311,7 @@
 				998AEFAD1EF043670047E155 /* EpicBacklogViewController.swift in Sources */,
 				99604DE71EC1363D0029F619 /* Item.swift in Sources */,
 				99E5F9E11EF4494200C2B80C /* EpicTableViewCell.swift in Sources */,
+				999414091F13B41E00175951 /* StoryTableViewController.swift in Sources */,
 				996668C91EE5B252008E8C93 /* Task.swift in Sources */,
 				998AEFB31EF04A4B0047E155 /* CreateNewCell.swift in Sources */,
 				1509EC8A1EC064620001728C /* AppDelegate.swift in Sources */,
@@ -462,7 +466,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.horidream.app.ScrumSolo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -479,7 +483,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.horidream.app.ScrumSolo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
