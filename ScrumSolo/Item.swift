@@ -11,14 +11,12 @@ import FMDB
 import CloudKit
 import Shifu
 
-enum ItemState:Int{
-    case todo = 0, inprogress, done
-}
+
 
 class Item{
     var title:String!
     var descriptions:String!
-    var state:ItemState = .todo
+    var createdTime:Date!
 }
 
 class ManageableItem: Item, LocalManageable, CloudManageable, Equatable{
