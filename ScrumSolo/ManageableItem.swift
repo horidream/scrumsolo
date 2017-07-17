@@ -13,59 +13,49 @@ import Shifu
 
 
 
-class Item{
-    var title:String!
-    var descriptions:String!
-    var createdTime:Date!
-}
-
-class ManageableItem: Item, LocalManageable, CloudManageable, Equatable{
+class ManageableItem: LocalManageable, CloudManageable, Equatable{
     static func ==(lhs: ManageableItem, rhs: ManageableItem) -> Bool {
         if let id1 = lhs.id, let id2 = rhs.id{
             return id1 == id2
         }
         return false
     }
-    
-
-    var id:Int64?
+    var title:String!
+    var desc:String!
+    var createdTime:Date!
+    var id: Int64?
     var record:CKRecord?
-    
     static let cloudStorage: CloudStorage = Shared.cloudStorage
     static let localStorage: LocalStorage = Shared.localStorage
     
     
-    required init(title:String, descriptions:String = ""){
-        super.init()
+    required init(title:String, desc:String = ""){
         self.title = title
-        self.descriptions = descriptions
+        self.desc = desc
     }
     
     required init(_ rst: FMResultSet) {
-        
-        super.init()
         self.title = rst.string(forColumn: "title")
-        self.descriptions = rst.string(forColumn:"descriptions")
+        self.desc = rst.string(forColumn:"desc")
+        self.createdTime = rst.date(forColumn: "createdTime")
         self.id = rst.longLongInt(forColumn: "id")
-        self.state = ItemState(rawValue: rst.long(forColumn: "state")) ?? .todo
     }
     
     required init(_ record:CKRecord){
-        super.init()
         self.title = record["title"] as! String
-        self.descriptions = record["descriptions"] as! String
-        self.state = ItemState(rawValue: record["state"] as! Int) ?? .todo
+        self.desc = record["desc"] as! String
+        self.createdTime = record["createdTime"] as! Date
         self.record = record
     }
     
     
-    final func delete() {
+    final func localDelete() {
         if let id = id{
             _ = localStorage.exe("delete from items where id = ?", args: [id])
         }
     }
     
-    final func save() {
+    final func localSave() {
         if let id = id,  localStorage.rowExists(id: id){
             update()
             

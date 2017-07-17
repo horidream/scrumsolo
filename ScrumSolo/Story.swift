@@ -25,8 +25,8 @@ class Story:ManageableItem{
         super.init(rst)
     }
     
-    required init(title:String, descriptions:String = ""){
-        super.init(title: title, descriptions: descriptions)
+    required init(title:String, desc:String = ""){
+        super.init(title: title, desc: desc)
     }
     
     func addChild(_ child:Task){
@@ -44,20 +44,19 @@ class Story:ManageableItem{
     }
     
     override func create() -> Int64? {
-        if localStorage.exe("insert into Story (title, descriptions, state, priority) values(?, ?, ?, ?)", args: [title, descriptions, state.rawValue, priority]){
+        if localStorage.exe("insert into Story (title, desc, priority) values(?, ?, ?)", args: [title, desc, priority]){
             return localStorage.lastInsertRowId
         }
         return nil
     }
     
     override func update() {
-        _ = localStorage.exe("update Story set (title, descriptions, state, priority) = (?, ?, ?, ?) where id=?", args: [title, descriptions, state.rawValue, priority,  id!])
+        _ = localStorage.exe("update Story set (title, desc, priority) = (?, ?, ?) where id=?", args: [title, desc, priority,  id!])
     }
     
     override func setRecordProperties(_ record: CKRecord) -> CKRecord {
         record["title"] = self.title! as CKRecordValue
-        record["descriptions"] = self.descriptions! as CKRecordValue
-        record["state"] = self.state.rawValue as CKRecordValue
+        record["desc"] = self.desc! as CKRecordValue
         record["priority"] = self.priority as CKRecordValue
         return record
     }

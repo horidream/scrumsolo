@@ -56,7 +56,7 @@ extension EpicBacklogViewController:UITableViewDelegate{
                 self.tableView.deselectRow(at: self.tableView.indexPathForSelectedRow!, animated: true)
                 if let title = alert.textFields?.first?.text{
                     let epic = Epic(title: title)
-                    epic.save()
+                    epic.localSave()
                     print(epic)
                     if(epic.id != nil){
                         self.epics.append(epic)
