@@ -15,7 +15,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Shifu:
-    :path: "../shifu"
+    :path: ../shifu
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -25,4 +25,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 0aa755b2f9bc9cc75ca39ecdd110ebde3d7bd167
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

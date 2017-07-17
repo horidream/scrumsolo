@@ -32,10 +32,6 @@ extension EpicBacklogViewController:UITableViewDelegate{
         let offset = scrollView.contentOffset
         if(offset.y < 0){
             let headerView = self.tableView.cellForRow(at: IndexPath(row: 0, section: 0))!
-//            var frame = attr.frame
-//            frame.size.height = max(0, headerReferenceSize.height + fabs(offset.y))
-//            frame.origin.y += offset.y
-//            attr.frame = frame
             let frame = CGRect(x: 0, y: offset.y, width: scrollView.contentSize.width, height:scrollView.contentSize.width * 256 / 375 - offset.y )
             headerView.frame = frame
         }
@@ -46,7 +42,7 @@ extension EpicBacklogViewController:UITableViewDelegate{
         switch (indexPath.section, indexPath.row) {
         case (2, _):
             print("crate new cell")
-            let alert = UIAlertController(title: "Create New Epic", message: "xxx", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Create New Epic", message: "Please input the Epic story name you are going to deal with", preferredStyle: .alert)
             
             alert.addTextField(configurationHandler: { (tf) in
                 
@@ -57,7 +53,6 @@ extension EpicBacklogViewController:UITableViewDelegate{
                 if let title = alert.textFields?.first?.text{
                     let epic = Epic(title: title)
                     epic.localSave()
-                    print(epic)
                     if(epic.id != nil){
                         self.epics.append(epic)
                         self.tableView.reloadData()

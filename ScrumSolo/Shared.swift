@@ -12,15 +12,20 @@ import Shifu
 
 
 struct Shared{
+    static let ls = LocalStorage(filename: "scrumfolo.db")
     static var localStorage:LocalStorage {
-        let ls = LocalStorage(filename: "scrumfolo.db")
-//        _ = ls.exe("DROP TABLE IF EXISTS Story")
-//        _ = ls.exe("DROP TABLE IF EXISTS Task")
-        ls.create(tableName: "Epic", schema: "id INTEGER PRIMARY KEY, title TEXT, desc TEXT, state INTEGER DEFAULT 0, priority INTEGER DEFAULT 0")
-        ls.create(tableName: "Task", schema: "id INTEGER PRIMARY KEY, title TEXT, state INTEGER DEFAULT 0, desc TEXT")
+//        drop("Epic", "Story", "Task")
+        ls.create(tableName: "Epic", schema: "id INTEGER PRIMARY KEY, title TEXT, desc TEXT, createdtime TIMESTAMP DEFAULT CURRENT_TIMESTAMP, priority INTEGER DEFAULT 0")
         ls.create(tableName: "Story", schema: "id INTEGER PRIMARY KEY, title TEXT, desc TEXT, state INTEGER DEFAULT 0, priority INTEGER DEFAULT 0")
         ls.create(tableName: "Task", schema: "id INTEGER PRIMARY KEY, title TEXT, state INTEGER DEFAULT 0, desc TEXT")
         return ls
+    }
+    
+    static func drop(_ tableNames:String...){
+        tableNames.forEach{
+            tableName in
+            _ = ls.exe("DROP TABLE IF EXISTS \(tableName)")
+        }
     }
     
     static let cloudStorage:CloudStorage = CloudStorage()
