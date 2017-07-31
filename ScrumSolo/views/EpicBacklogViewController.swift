@@ -8,12 +8,15 @@
 
 import UIKit
 import CloudKit
+import Shifu
 
 class EpicBacklogViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var epics:[Epic] = []
     override func viewDidLoad() {
-        self.title = "Epic Backlogs"
+        self.tabBarItem = UITabBarItem(title: "", image: "\u{f187}".image("FontAwesome", fontSize: 28), tag: 0)
+        
+        self.title = "Epics"
         self.tableView.register(UINib(nibName: "CreateNewCell", bundle: nil), forCellReuseIdentifier: "EpicNew")
         self.tableView.dataSource = self
         self.tableView.delegate = self
