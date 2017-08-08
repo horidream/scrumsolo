@@ -239,24 +239,40 @@
             </objects>
             <point key="canvasLocation" x="493" y="2317"/>
         </scene>
-        <!--Stories-->
-        <scene sceneID="Pyp-J2-qxR">
+        <!--Epics-->
+        <scene sceneID="jeJ-MC-6oc">
             <objects>
-                <viewController id="kJY-pH-ObP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KsS-kT-4Jv"/>
-                        <viewControllerLayoutGuide type="bottom" id="VZf-Fo-2ta"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="o2i-xQ-q2S">
+                <collectionViewController id="Uuz-Sw-Jig" customClass="EpicCLVC" customModule="ScrumSolo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iQa-qH-qEJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Stories" id="bfk-jT-Sc9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2JO-WJ-GS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uku-AV-7k6">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lJq-Oj-jJB">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Uuz-Sw-Jig" id="ifx-2R-e35"/>
+                            <outlet property="delegate" destination="Uuz-Sw-Jig" id="t0g-PI-5El"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Epics" id="KeY-Kk-fte"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="735-aD-Yfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="484" y="209"/>
+            <point key="canvasLocation" x="492" y="246"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Y1L-8p-HZN">
@@ -268,9 +284,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="N5k-7x-Z8C" kind="relationship" relationship="viewControllers" id="4qP-yL-To5"/>
-                        <segue destination="kJY-pH-ObP" kind="relationship" relationship="viewControllers" id="bdv-PN-t9G"/>
+                        <segue destination="Uuz-Sw-Jig" kind="relationship" relationship="viewControllers" id="bgZ-nJ-2eI"/>
                         <segue destination="6CY-GH-lcJ" kind="relationship" relationship="viewControllers" id="h2g-q1-OJM"/>
+                        <segue destination="N5k-7x-Z8C" kind="relationship" relationship="viewControllers" id="4qP-yL-To5"/>
                         <segue destination="UtD-GK-ooe" kind="relationship" relationship="viewControllers" id="Vax-yW-Psh"/>
                         <segue destination="bFH-dO-e7D" kind="relationship" relationship="viewControllers" id="xin-1d-EB7"/>
                     </connections>
