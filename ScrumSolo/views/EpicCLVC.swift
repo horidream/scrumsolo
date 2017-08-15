@@ -14,7 +14,7 @@ class EpicCLVC: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Epic Stories"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

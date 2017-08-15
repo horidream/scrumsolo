@@ -475,6 +475,7 @@
 				CODE_SIGN_ENTITLEMENTS = ScrumSolo/ScrumSolo.entitlements;
 				DEVELOPMENT_TEAM = 5296P9QS3C;
 				INFOPLIST_FILE = ScrumSolo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.horidream.app.ScrumSolo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -492,6 +493,7 @@
 				CODE_SIGN_ENTITLEMENTS = ScrumSolo/ScrumSolo.entitlements;
 				DEVELOPMENT_TEAM = 5296P9QS3C;
 				INFOPLIST_FILE = ScrumSolo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.horidream.app.ScrumSolo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,7 +8,7 @@ target 'ScrumSolo' do
 
   # Pods for ScrumSolo
     pod 'FMDB'
-    pod 'BadgeSwift'
+    # pod 'EZSwiftExtensions'
     pod 'Alamofire'
     pod 'Shifu', :path => "../shifu"
 end

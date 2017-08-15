@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import BadgeSwift
 
 class StoryTableViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     
-    @IBOutlet weak var badge: BadgeSwift!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -7,27 +7,41 @@
 //
 
 import UIKit
-@IBDesignable
+
 class EpicCell: UICollectionViewCell {
 
     @IBOutlet weak var title: UILabel!
     
+    @IBOutlet weak var closeBtn: UIButton!
+    @IBOutlet weak var bgView: UIView!
     var color:UIColor{
         get{
-            return UIColor(cgColor: self.layer.borderColor!)
+            return UIColor(cgColor: self.bgView.layer.borderColor!)
         }
         set{
-            self.layer.borderColor = color.cgColor
+            self.bgView.layer.borderColor = newValue.cgColor
+            self.closeBtn.setTitleColor(newValue, for: .normal)
+            self.bgView.layer.setNeedsDisplay()
         }
     }
     
-    override func prepareForInterfaceBuilder() {
-        self.color = .red;
-    }
+//    override func prepareForInterfaceBuilder() {
+//        self.color = .red;
+//    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.layer.borderWidth = 2
+        self.bgView.layer.cornerRadius = 5
+        self.bgView.backgroundColor = .clear
+//        self.layer.masksToBounds = true
+        self.bgView.layer.borderWidth = 1
+        self.color = .red
+        
+        self.closeBtn.addTarget(self, action: #selector(onRemove(sender:)), for:.touchUpInside )
+    }
+    
+    @objc func onRemove(sender:UIButton){
+        print("will remove this epic \(self.title.text)")
     }
     
     
