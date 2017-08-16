@@ -11,22 +11,31 @@ import UIKit
 private let reuseIdentifier = "EpicCell"
 
 class EpicCLVC: UICollectionViewController {
-
+    
+    var epics = "RandomRiches,Hello World, sbX 4.7, ScrumSolo 1.0".split(separator: ",")
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Epic Stories"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
         self.collectionView?.register(UINib(nibName:"EpicCell", bundle:nil), forCellWithReuseIdentifier: "EpicCell")
         let flowLayout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.estimatedItemSize = CGSize(width: 100, height: 100)
-        // Do any additional setup after loading the view.
+        flowLayout.estimatedItemSize = CGSize(width: 120, height: 38)
+        
+        
+        
     }
 
+    @IBAction func onEdit(_ sender: Any) {
+        self.isEditing = !self.isEditing
+        self.collectionView?.reloadSections([0])
+    }
     
 
+    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+    }
+    
+    
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -37,16 +46,16 @@ class EpicCLVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 50
+        return epics.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! EpicCell
-        let arr = "This is an online brainstorming tool I made that generates random words".split(separator: " ")
-        let word = arr[Int(arc4random_uniform(UInt32(arr.count)))]
+        let word = epics[indexPath.row]
         cell.title.text = String(word)
         cell.title.sizeToFit()
         cell.color = .red;
+        cell.isEditing = self.isEditing
         return cell
     }
 

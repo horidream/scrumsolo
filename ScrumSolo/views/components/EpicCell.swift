@@ -20,14 +20,17 @@ class EpicCell: UICollectionViewCell {
         }
         set{
             self.bgView.layer.borderColor = newValue.cgColor
+            self.title.textColor = newValue
             self.closeBtn.setTitleColor(newValue, for: .normal)
             self.bgView.layer.setNeedsDisplay()
         }
     }
     
-//    override func prepareForInterfaceBuilder() {
-//        self.color = .red;
-//    }
+    var isEditing:Bool = false{
+        didSet{
+            self.closeBtn.isHidden = !isEditing
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,12 +39,13 @@ class EpicCell: UICollectionViewCell {
 //        self.layer.masksToBounds = true
         self.bgView.layer.borderWidth = 1
         self.color = .red
-        
+        self.isEditing = false
+        self.closeBtn.backgroundColor = UIColor.red.withAlphaComponent(0.01)
         self.closeBtn.addTarget(self, action: #selector(onRemove(sender:)), for:.touchUpInside )
     }
     
     @objc func onRemove(sender:UIButton){
-        print("will remove this epic \(self.title.text)")
+        print("will remove this epic \(String(describing: self.title.text))")
     }
     
     

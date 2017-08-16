@@ -268,7 +268,13 @@
                             <outlet property="delegate" destination="Uuz-Sw-Jig" id="t0g-PI-5El"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Jq9-be-4Km"/>
+                    <navigationItem key="navigationItem" id="Jq9-be-4Km">
+                        <barButtonItem key="rightBarButtonItem" image="icon_edit" id="Ndg-eN-6nZ">
+                            <connections>
+                                <action selector="onEdit:" destination="Uuz-Sw-Jig" id="a2u-pb-12v"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="735-aD-Yfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -317,5 +323,6 @@
     </scenes>
     <resources>
         <image name="head" width="424" height="600"/>
+        <image name="icon_edit" width="22" height="22"/>
     </resources>
 </document>
