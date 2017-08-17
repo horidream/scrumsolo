@@ -18,8 +18,8 @@ class EpicCLVC: UICollectionViewController {
         self.title = "Epic Stories"
 
         self.collectionView?.register(UINib(nibName:"EpicCell", bundle:nil), forCellWithReuseIdentifier: "EpicCell")
-        let flowLayout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
-        flowLayout.estimatedItemSize = CGSize(width: 120, height: 38)
+//        let flowLayout = self.collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+//        flowLayout.estimatedItemSize = CGSize(width: 120, height: 38)
         
         
         
@@ -32,7 +32,11 @@ class EpicCLVC: UICollectionViewController {
     
 
     override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
+        let (a, b) = (epics[sourceIndexPath.row], epics[destinationIndexPath.row])
+        epics[sourceIndexPath.row] = b
+        epics[destinationIndexPath.row] = a
+//        self.collectionView?.reloadData()
+        self.collectionView?.collectionViewLayout.invalidateLayout()
     }
     
     
@@ -58,7 +62,8 @@ class EpicCLVC: UICollectionViewController {
         cell.isEditing = self.isEditing
         return cell
     }
-
+    
+    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -90,4 +95,14 @@ class EpicCLVC: UICollectionViewController {
     }
     */
 
+}
+
+extension  EpicCLVC:UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let str = epics[indexPath.row]
+        var txtSize = (str as NSString).size(withAttributes: [.font: UIFont.systemFont(ofSize:17)])
+        txtSize.width += 28
+        txtSize.height += 16
+        return txtSize
+    }
 }

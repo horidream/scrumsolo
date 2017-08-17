@@ -105,12 +105,31 @@
 		1509EC881EC064620001728C /* ScrumSolo */ = {
 			isa = PBXGroup;
 			children = (
+				159F68A41F45735500A1CAF1 /* utils */,
 				998AEFAF1EF049D10047E155 /* views */,
-				996668CB1EE5B27D008E8C93 /* manageable */,
+				159F68A71F45880100A1CAF1 /* controllers */,
 				996668CA1EE5B26F008E8C93 /* model */,
 				99604DE51EC131470029F619 /* support */,
 			);
 			path = ScrumSolo;
+			sourceTree = "<group>";
+		};
+		159F68A41F45735500A1CAF1 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				998418A31EC3E599008ADCE8 /* Shared.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		159F68A71F45880100A1CAF1 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1509EC8B1EC064620001728C /* EpicBacklogViewController.swift */,
+				999414081F13B41E00175951 /* StoryTableViewController.swift */,
+				991B4E4C1F31FF0600BF2733 /* EpicCLVC.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 		99604DE51EC131470029F619 /* support */ = {
@@ -138,22 +157,11 @@
 			name = model;
 			sourceTree = "<group>";
 		};
-		996668CB1EE5B27D008E8C93 /* manageable */ = {
-			isa = PBXGroup;
-			children = (
-				998418A31EC3E599008ADCE8 /* Shared.swift */,
-			);
-			name = manageable;
-			sourceTree = "<group>";
-		};
 		998AEFAF1EF049D10047E155 /* views */ = {
 			isa = PBXGroup;
 			children = (
 				998AEFB01EF049F10047E155 /* components */,
-				1509EC8B1EC064620001728C /* EpicBacklogViewController.swift */,
-				999414081F13B41E00175951 /* StoryTableViewController.swift */,
 				1509EC8D1EC064620001728C /* Main.storyboard */,
-				991B4E4C1F31FF0600BF2733 /* EpicCLVC.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -272,13 +280,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScrumSolo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		60EB011CCE62CC1C968534F3 /* [CP] Embed Pods Frameworks */ = {
@@ -287,9 +298,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ScrumSolo/Pods-ScrumSolo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Shifu/Shifu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Shifu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
